@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Threads Consultancy – ADA Title II Digital Accessibility</title>
+  <meta name="description" content="Independent accessibility audits, clear roadmaps, and hands‑on guidance for public agencies. Build and sustain ADA Title II / WCAG 2.1 AA compliance." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Common Threads Consultancy" />
+  <meta property="og:description" content="We help public agencies make digital services accessible and compliant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="/og-image.png" />
+  <style>
+    :root {
+      --ink: #22252A;
+      --blue: #204E8A;
+      --blue-50: #E8F0FB;
+      --bg: #ffffff;
+      --success: #0F7B53;
+      --radius: 12px;
+    }
+    html { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Source Sans 3", Arial, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 18px;
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--blue); }
+    .btn { display:inline-block; padding: 12px 18px; border-radius: var(--radius); text-decoration:none; font-weight:600; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:focus, .btn-primary:hover { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0 0 0 3px var(--blue); }
+    .btn-secondary { border: 2px solid var(--blue); color: var(--blue); background: transparent; }
+    .btn-secondary:focus, .btn-secondary:hover { background: var(--blue-50); }
+    header { border-bottom: 1px solid #e6e6e6; }
+    .brand { display:flex; align-items:center; gap:12px; padding: 14px 0; }
+    .brand img { height: 36px; width: auto; }
+    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { left:16px; top:16px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; border-radius:6px; z-index: 1000; }
+    .hero { padding: 56px 0 32px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.2; margin: 0 0 12px; }
+    .sub { max-width: 720px; font-size: 18px; margin: 8px 0 20px; }
+    .pill { display:inline-block; background: var(--blue-50); color: var(--blue); padding:6px 10px; border-radius:999px; font-size:14px; font-weight:600; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+    .card { padding:16px; border:1px solid #e6e6e6; border-radius: var(--radius); background:#fff; }
+    .section { padding: 32px 0; }
+    .muted { color:#555; }
+    footer { border-top:1px solid #e6e6e6; padding:24px 0; font-size:16px; }
+    .small { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header role="banner">
+    <div class="container brand">
+      <!-- Replace src with your hosted logo path -->
+      <img src="/logo.png" alt="Common Threads Consultancy" />
+      <strong>Common Threads Consultancy</strong>
+      <span class="muted small" aria-hidden="true">•</span>
+      <span class="small">CPACC‑certified • Independent oversight</span>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-h1">
+      <p class="pill">Public sector accessibility</p>
+      <h1 id="hero-h1">Helping governments meet the 2026 ADA deadline — and serve every resident online.</h1>
+      <p class="sub">By April 2026, public-facing digital services must meet WCAG 2.1 AA. We provide independent audits, clear roadmaps, and weekly guidance for your staff or vendors — so you know what to fix, how to fix it, and how to stay compliant.</p>
+      <p>
+        <a class="btn btn-primary" href="#contact">Schedule a compliance review</a>
+        <a class="btn btn-secondary" href="#services">See packages & pricing</a>
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="why">
+      <h2 id="why">Why this matters</h2>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h3>Avoid risk</h3>
+          <p class="muted">We help you avoid fines and lawsuits with a practical, defensible path to compliance.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Serve everyone</h3>
+          <p class="muted">One in four U.S. adults lives with a disability. Accessible sites let every resident complete key tasks online.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Build capability</h3>
+          <p class="muted">We guide your team or vendors so you can maintain accessibility long after the project ends.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section" aria-labelledby="how">
+      <h2 id="how">How we help</h2>
+      <ol>
+        <li><strong>Independent Audit</strong> — manual + automated testing to see where you stand.</li>
+        <li><strong>Roadmap to Compliance</strong> — clear priorities tied to WCAG 2.1 AA.</li>
+        <li><strong>Weekly Guidance</strong> — support for your staff or vendors while fixes are made.</li>
+        <li><strong>Training & Capability</strong> — teach teams how to prevent issues.</li>
+        <li><strong>Proactive Accessibility</strong> — workshops and design reviews for new projects.</li>
+      </ol>
+      <div class="card">
+        <p class="muted small"><strong>Packages at a glance:</strong> Audit & Roadmap • Audit + Guidance • Full Program • Retainer • Inclusive Design Support. <a href="#contact">Ask for the pricing sheet</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="work">
+      <h2 id="work">Representative projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>LMI – Government‑Facing AI Platform</h3>
+          <p class="muted small">Built an accessibility program from scratch; Section 508 compliant launch with VPAT documentation and sustainable workflow.</p>
+        </article>
+        <article class="card">
+          <h3>General Motors – Global Design System</h3>
+          <p class="muted small">Embedded accessibility into a next‑gen design system used across vehicle programs; compliance at scale under CVAA.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-h2">
+      <h2 id="contact-h2">Get in touch</h2>
+      <p class="muted">Prefer a quick call? We’ll keep it simple and practical.</p>
+      <ul>
+        <li>Email: <a href="mailto:you@yourdomain.com">you@yourdomain.com</a></li>
+        <li>Phone: <a href="tel:+1xxxxxxxxxx">(xxx) xxx‑xxxx</a></li>
+        <li>Location: Michigan • Serving state & local agencies</li>
+      </ul>
+      <p>
+        <a class="btn btn-primary" href="mailto:you@yourdomain.com?subject=Compliance%20Review%20Request">Schedule a compliance review</a>
+      </p>
+      <p class="small muted">We provide independent audits, guidance, and verification. Your staff or vendors handle code changes — building the skills for long‑term compliance.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container small muted">
+      © <span id="year"></span> Common Threads Consultancy LLC • All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
