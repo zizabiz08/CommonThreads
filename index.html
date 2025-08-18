@@ -1,141 +1,785 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Common Threads Consultancy – ADA Title II Digital Accessibility</title>
-  <meta name="description" content="Independent accessibility audits, clear roadmaps, and hands‑on guidance for public agencies." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Common Threads Consultancy" />
-  <meta property="og:description" content="We help public agencies make digital services accessible and compliant." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://commonthreadsdigital.com" />
-  <meta property="og:image" content="/og-image.png" />
-  <style>
-    :root {
-      --ink: #22252A;
-      --blue: #0F2852;
-      --blue-50: #E8F0FB;
-      --bg: #ffffff;
-      --success: #0F7B53;
-      --radius: 12px;
-    }
-    html { box-sizing: border-box; }
-    *, *::before, *::after { box-sizing: inherit; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Source Sans 3", Arial, sans-serif;
-      color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 18px;
-    }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-    a { color: var(--blue); }
-    .btn { display:inline-block; padding: 12px 18px; border-radius: var(--radius); text-decoration:none; font-weight:600; }
-    .btn-primary { background: var(--blue); color: #fff; }
-    .btn-primary:focus, .btn-primary:hover { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0 0 0 3px var(--blue); }
-    .btn-secondary { border: 2px solid var(--blue); color: var(--blue); background: transparent; }
-    .btn-secondary:focus, .btn-secondary:hover { background: var(--blue-50); }
-    header { border-bottom: 1px solid #e6e6e6; }
-    .brand { display:flex; align-items:center; gap:12px; padding: 14px 0; }
-    .brand img { height: 50px; width: auto; }
-    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus { left:16px; top:16px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; border-radius:6px; z-index: 1000; }
-    .hero { padding: 56px 0 32px; }
-    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.2; margin: 0 0 12px; }
-    .sub { max-width: 720px; font-size: 18px; margin: 8px 0 20px; }
-    .pill { display:inline-block; background: var(--blue-50); color: var(--blue); padding:6px 10px; border-radius:999px; font-size:14px; font-weight:600; }
-    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
-    .card { padding:16px; border:1px solid #e6e6e6; border-radius: var(--radius); background:#fff; }
-    .section { padding: 32px 0; }
-    .muted { color:#555; }
-    footer { border-top:1px solid #e6e6e6; padding:24px 0; font-size:16px; }
-    .small { font-size: 14px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Threads - Accessible digital strategies for the public good</title>
+    <meta name="description" content="Common Threads helps state and local governments meet the 2026 ADA deadline with independent audits, clear roadmaps, and ongoing support for digital accessibility compliance.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* MADE Tommy Soft font from Creative Market */
+        @font-face {
+            font-family: 'MADE Tommy Soft';
+            src: url('fonts/made-tommy-soft.woff2') format('woff2'),
+                 url('fonts/made-tommy-soft.woff') format('woff'),
+                 url('fonts/made-tommy-soft.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* MADE Tommy Soft Medium/Bold (if you have these weights) */
+        @font-face {
+            font-family: 'MADE Tommy Soft';
+            src: url('fonts/made-tommy-soft-medium.woff2') format('woff2'),
+                 url('fonts/made-tommy-soft-medium.woff') format('woff'),
+                 url('fonts/made-tommy-soft-medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Use MADE Tommy Soft for headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
+        }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for keyboard navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #ffb000;
+            outline-offset: 2px;
+        }
+
+        .btn-primary:focus,
+        .btn-secondary:focus {
+            outline: 3px solid #ffb000;
+            outline-offset: 2px;
+        }
+
+        /* Ensure sufficient color contrast */
+        .hero p {
+            color: #2d2d2d; /* Darker for better contrast */
+        }
+
+        .column p {
+            color: #2d2d2d; /* Darker for better contrast */
+        }
+
+        .help-header p {
+            color: #2d2d2d; /* Darker for better contrast */
+        }
+
+        .step-content p {
+            color: #2d2d2d; /* Darker for better contrast */
+        }
+
+        .step-details {
+            color: #555; /* Darker for better contrast */
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        .projects-intro {
+            color: #2d2d2d; /* Darker for better contrast */
+            margin-bottom: 3rem;
+        }
+
+        .project-content p {
+            color: #2d2d2d; /* Darker for better contrast */
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: #2d2d2d; /* Darker for better contrast */
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #2c5aa0;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 40px;
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* Hide the old logo elements when using placeholder */
+        .logo-icon {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffc5c5 0%, #ffb3ba 50%, #ffd1a3 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #2d2d2d;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #1e4080;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2c5aa0;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #2c5aa0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #2c5aa0;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.2);
+        }
+
+        /* Three Columns Section */
+        .three-columns {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .columns-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .column h3 {
+            color: #2c5aa0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .column p {
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        /* How We Help Section */
+        .how-we-help {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .help-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .help-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .help-header h2 {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-header p {
+            color: #2d2d2d;
+            font-size: 1.1rem;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+            transform: translateX(8px);
+        }
+
+        .step-number {
+            background: #e8f4f8;
+            color: #2c5aa0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            background: #2c5aa0;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Representative Projects */
+        .projects {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .projects h2 {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-intro {
+            color: #2d2d2d;
+            margin-bottom: 3rem;
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #2c5aa0, #4a7bc8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .project-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: #2d2d2d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #f0f8ff;
+            padding: 4rem 0;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .cta-content h2 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: #2d2d2d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .cta-image {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c5aa0;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo-placeholder {
+            width: 100px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .footer-tagline {
+            color: #a8c5f0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero-container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .columns-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 2.5rem;
+            }
+
+            .help-container {
+                padding: 0 1rem;
+            }
+
+            .steps {
+                gap: 1rem;
+            }
+
+            .step {
+                padding: 1rem;
+                margin: 0 -1rem;
+            }
+
+            .step:hover {
+                transform: none;
+                margin: 0 -1rem;
+            }
+
+            .projects-container {
+                padding: 0 1rem;
+            }
+
+            .project-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cta-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 1rem;
+                gap: 2rem;
+            }
+
+            .three-columns, .how-we-help, .projects, .cta {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .column h3 {
+                font-size: 1.1rem;
+            }
+
+            .help-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .projects h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .step-content h3 {
+                font-size: 1rem;
+            }
+
+            .step-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  <header role="banner">
-    <div class="container brand">
-      <img src="CTlogo_h2.png" alt="Common Threads Consultancy Logo" />
-      <span class="muted small" aria-hidden="true">•</span>
-    </div>
-  </header>
-
-  <main id="main" class="container" role="main">
-    <section class="hero" aria-labelledby="hero-h1">
-      <p class="pill">Public sector accessibility</p>
-      <h1 id="hero-h1">Helping governments meet the 2026 ADA deadline — and serve every resident online.</h1>
-      <p class="sub">By April 2026, public-facing digital services must meet WCAG 2.1 AA. We provide independent audits, clear roadmaps, and weekly guidance for your staff or vendors — so you know what to fix, how to fix it, and how to stay compliant long-term.</p>
-      <p>
-        <a class="btn btn-primary" href="#contact">Schedule a compliance review</a>
-        <a class="btn btn-secondary" href="#services">See packages & pricing</a>
-      </p>
-    </section>
-
-    <section class="section" aria-labelledby="why">
-      <h2 id="why">Why this matters</h2>
-      <div class="grid" role="list">
-        <div class="card" role="listitem">
-          <h3>Avoid risk</h3>
-          <p class="muted">We help you avoid fines and lawsuits with a practical, defensible path to compliance.</p>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/CTlogo_h2.png" alt="Common Threads Logo">
+            </div>
         </div>
-        <div class="card" role="listitem">
-          <h3>Serve everyone</h3>
-          <p class="muted">One in four U.S. adults lives with a disability. Accessible sites let every resident complete key tasks online.</p>
+    </header>
+
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-container">
+                <h1 id="hero-heading">Helping state and local governments meet the 2026 ADA deadline.</h1>
+                <p>We provide independent audits, clear roadmaps, and weekly support for your staff or vendors — so you know what to fix, how to fix it, and how to stay compliant long-term.</p>
+                <div class="hero-buttons">
+                    <a href="mailto:hello@commonthreadsdigital.com?subject=ADA%20Compliance%20Inquiry&body=Hi!%20I'd%20like%20to%20learn%20more%20about%20how%20Common%20Threads%20can%20help%20with%20our%202026%20ADA%20compliance%20needs.%0D%0A%0D%0AOrganization:%20%0D%0AContact%20Person:%20%0D%0APhone:%20%0D%0ABest%20time%20to%20call:%20%0D%0A%0D%0APlease%20let%20me%20know%20how%20we%20can%20get%20started!" class="btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Columns -->
+        <section class="three-columns" aria-labelledby="benefits-heading">
+            <div class="columns-container">
+                <h2 id="benefits-heading" class="sr-only">Key Benefits</h2>
+                <div class="column">
+                    <h3>Avoid Costly Fines & Lawsuits</h3>
+                    <p>DOJ penalties can reach $75,000 per violation, and Title II requires that electronic accessibility and digital inclusion be proactive rather than reactive.</p>
+                </div>
+                <div class="column">
+                    <h3>Serve Entire Community</h3>
+                    <p>One in four U.S. adults lives with a disability. Making your site accessible ensures your residents can access essential services online.</p>
+                </div>
+                <div class="column">
+                    <h3>Build Lasting Capability</h3>
+                    <p>We don't just hand you a report - we guide your team step by step, be supportive for your current staff, and help you maintain accessibility long-term.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Help -->
+        <section class="how-we-help" aria-labelledby="process-heading">
+            <div class="help-container">
+                <div class="help-header">
+                    <h2 id="process-heading">How We Help</h2>
+                    <p>Getting compliance doesn't have to feel overwhelming. We break it down into simple steps and support your team along the way.</p>
+                </div>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <div class="step-content">
+                            <h3>Step 1 - Independent Audit</h3>
+                            <p>We test your website or portal using both manual and automated testing to identify accessibility barriers.</p>
+                            <ul class="step-details">
+                                <li>You'll get a clear picture of where things stand today.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <div class="step-content">
+                            <h3>Step 2 - Roadmap to Compliance</h3>
+                            <p>We prioritize what to fix first, estimate the work required, and create a plan to get it all done.</p>
+                            <ul class="step-details">
+                                <li>You'll have a step-by-step to-do list to reach compliance.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <div class="step-content">
+                            <h3>Step 3 - Ongoing Guidance</h3>
+                            <p>Every week, we meet with your staff or vendors to review progress, answer questions, and keep things on track.</p>
+                            <ul class="step-details">
+                                <li>You'll know exactly what progress is being made toward compliance.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <div class="step-content">
+                            <h3>Step 4 - Training & Capability Building</h3>
+                            <p>We build accessibility into your processes so you don't have to start over each time.</p>
+                            <ul class="step-details">
+                                <li>Your staff becomes confident and capable long after our project ends.</li>
+                                <li>Optional: Ongoing support for systems, spot checks, and guidance so you never fall behind.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number" aria-hidden="true">5</div>
+                        <div class="step-content">
+                            <h3>Step 5 - Proactive Accessibility</h3>
+                            <p>Accessibility doesn't have to be an afterthought. We can train staff members, review mockups, and provide ongoing support.</p>
+                            <ul class="step-details">
+                                <li>You'll never have reactive accessibility issues again.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Representative Projects -->
+        <section class="projects" aria-labelledby="projects-heading">
+            <div class="projects-container">
+                <h2 id="projects-heading">Representative Projects</h2>
+                <p class="projects-intro">Our work ranges from accessibility audits for embedded third party vendors, to the establishment of formal accessibility policies for statewide computing systems.</p>
+                
+                <div class="project-cards">
+                    <article class="project-card">
+                        <div class="project-image">
+                        <img src="images/liger.png" alt="LMI Government Platform Screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>LMI - Government-Facing Permit Platform</h3>
+                            <p>Built an accessibility program from the ground up for a government-to-business platform, including web-based applications and compliance frameworks.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                        <img src="images/cadillac_optiq.png" alt="Government Design System Interface">
+                        </div>
+                        <div class="project-content">
+                            <h3>Government Design System Accessibility</h3>
+                            <p>Helped a government digital team create a complete accessible design system used across their entire project portfolio.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-heading">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 id="cta-heading">Ready to get started?</h2>
+                    <p>The 2026 ADA Title II mandate is coming up fast, but getting compliant doesn't have to be stressful. With the right plan and support, your agency can meet federal requirements, avoid costly fines, and make sure you're serving every member of your community.</p>
+                    <p>Let's take the first step together.</p>
+                    <a href="mailto:hello@commonthreadsdigital.com?subject=Free%20ADA%20Consultation%20Request&body=Hi!%20I'd%20like%20to%20schedule%20a%20free%20consultation%20to%20discuss%20our%202026%20ADA%20compliance%20needs.%0D%0A%0D%0AOrganization:%20%0D%0AContact%20Person:%20%0D%0APhone:%20%0D%0ABest%20time%20to%20call:%20%0D%0A%0D%0APlease%20let%20me%20know%20your%20availability!" class="btn-primary">Contact Us Today</a>
+                </div>
+                <div class="cta-image">
+    <img src="images/workingtogether.jpg" alt="Two professionals working together" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/CTlogo_white.png" alt="Common Threads Logo">
+            </div>
+            <p class="footer-tagline">Accessible digital strategies for the public good</p>
         </div>
-        <div class="card" role="listitem">
-          <h3>Build capability</h3>
-          <p class="muted">We guide your team or vendors so you can maintain accessibility long after the project ends.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section" aria-labelledby="how">
-      <h2 id="how">How we help</h2>
-      <ol>
-        <li><strong>Independent Audit</strong> — manual + automated testing to see where you stand.</li>
-        <li><strong>Roadmap to Compliance</strong> — clear priorities tied to WCAG 2.1 AA.</li>
-        <li><strong>Weekly Guidance</strong> — support for your staff or vendors while fixes are made.</li>
-        <li><strong>Training & Capability</strong> — teach teams how to prevent issues.</li>
-        <li><strong>Proactive Accessibility</strong> — workshops and design reviews for new projects.</li>
-      </ol>
-      <div class="card">
-        <p class="muted small"><strong>Packages at a glance:</strong> Audit & Roadmap • Audit + Guidance • Full Program • Retainer • Inclusive Design Support. <a href="#contact">Ask for the pricing sheet</a>.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="work">
-      <h2 id="work">Representative projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>LMI – Government‑Facing AI Platform</h3>
-          <p class="muted small">Built an accessibility program from scratch; Section 508 compliant launch with VPAT documentation and sustainable workflow.</p>
-        </article>
-        <article class="card">
-          <h3>General Motors – Global Design System</h3>
-          <p class="muted small">Embedded accessibility into a next‑gen design system used across vehicle programs; compliance at scale under CVAA.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section" aria-labelledby="contact-h2">
-      <h2 id="contact-h2">Get in touch</h2>
-      <p class="muted">Prefer a quick call? We’ll keep it simple and practical.</p>
-      <ul>
-        <li>Email: <a href="mailto:hannah@commonthreadsdigital.com">hannah@commonthreadsdigital.com</a></li>
-        <li>Phone: <a href="tel:+19895331714">(989) 533‑1714</a></li>
-        <li>Serving state & local agencies</li>
-      </ul>
-      <p class="small muted">We provide independent audits, guidance, and verification. Your staff or vendors handle code changes — building the skills for long‑term compliance.</p>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container small muted">
-      © <span id="year"></span> Common Threads Consultancy LLC • All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </footer>
 </body>
 </html>
