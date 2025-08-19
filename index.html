@@ -22,7 +22,6 @@
             font-display: swap;
         }
         
-        /* MADE Tommy Soft Medium */
         @font-face {
             font-family: 'MADE Tommy Soft';
             src: url('fonts/made_tommy_soft_medium-webfont.woff2') format('woff2'),
@@ -32,9 +31,10 @@
             font-display: swap;
         }
 
-        /* Use MADE Tommy Soft for headings */
+        /* Use MADE Tommy Soft for headings with Quicksand fallback */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
+            font-weight: 600;
         }
 
         /* Accessibility improvements */
@@ -65,41 +65,41 @@
 
         /* Ensure sufficient color contrast */
         .hero p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
         }
 
         .column p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
         }
 
         .help-header p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
         }
 
         .step-content p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
         }
 
         .step-details {
-            color: #555; /* Darker for better contrast */
+            color: #555;
             font-size: 0.9rem;
             margin-left: 1rem;
         }
 
         .projects-intro {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
             margin-bottom: 3rem;
         }
 
         .project-content p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
             font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 1rem;
         }
 
         .cta-content p {
-            color: #2d2d2d; /* Darker for better contrast */
+            color: #2d2d2d;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
@@ -139,21 +139,6 @@
             font-weight: bold;
             font-size: 1.1rem;
             color: #2c5aa0;
-        }
-
-        .logo-placeholder {
-            width: 120px;
-            height: 40px;
-            background: #f0f0f0;
-            border: 2px dashed #ccc;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.8rem;
-            text-align: center;
-            line-height: 1.2;
         }
 
         /* Logo smart sizing */
@@ -203,7 +188,7 @@
 
         .hero h1 {
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 600;
             color: #2c5aa0;
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -540,21 +525,6 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
-        }
-
-        .footer-logo-placeholder {
-            width: 100px;
-            height: 32px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.7rem;
-            text-align: center;
-            line-height: 1.2;
         }
 
         .footer-tagline {
