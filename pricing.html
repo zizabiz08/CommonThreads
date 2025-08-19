@@ -340,8 +340,8 @@
         }
 
         .pricing-item {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 150px 1fr;
             align-items: center;
             padding: 0.5rem 0;
             border-bottom: 1px solid #e9ecef;
@@ -356,22 +356,18 @@
             color: #333;
         }
 
-        .pricing-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .pricing-amount {
             font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: #333;
+            text-align: right;
         }
 
         .timeline {
             font-size: 0.9rem;
             color: #666;
+            text-align: center;
         }
 
         /* Add-ons */
@@ -411,9 +407,19 @@
         }
 
         .addon-pricing {
-            font-weight: 600;
-            color: #333;
             margin-top: 1rem;
+        }
+
+        .addon-pricing .price {
+            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .addon-pricing .description {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            color: #666;
         }
 
         /* Footer sections */
@@ -658,24 +664,18 @@
                 <div class="pricing-list">
                     <div class="pricing-item">
                         <div class="pricing-label">Small</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$6,500</div>
-                            <div class="timeline">~2 weeks</div>
-                        </div>
+                        <div class="timeline">~2 weeks</div>
+                        <div class="pricing-amount">$6,500</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Medium</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$12,000</div>
-                            <div class="timeline">~4 weeks</div>
-                        </div>
+                        <div class="timeline">~4 weeks</div>
+                        <div class="pricing-amount">$12,000</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Large</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">Starting at $20,000</div>
-                            <div class="timeline">~6-8 weeks</div>
-                        </div>
+                        <div class="timeline">~6-8 weeks</div>
+                        <div class="pricing-amount">Starting at $20,000</div>
                     </div>
                 </div>
             </article>
@@ -701,24 +701,18 @@
                 <div class="pricing-list">
                     <div class="pricing-item">
                         <div class="pricing-label">Small</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$9,000</div>
-                            <div class="timeline">~6-8 weeks</div>
-                        </div>
+                        <div class="timeline">~6-8 weeks</div>
+                        <div class="pricing-amount">$9,000</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Medium</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$15,500</div>
-                            <div class="timeline">~10-14 weeks</div>
-                        </div>
+                        <div class="timeline">~10-14 weeks</div>
+                        <div class="pricing-amount">$15,500</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Large</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">Starting at $25,000</div>
-                            <div class="timeline">~4-6 months</div>
-                        </div>
+                        <div class="timeline">~4-6 months</div>
+                        <div class="pricing-amount">Starting at $25,000</div>
                     </div>
                 </div>
             </article>
@@ -744,24 +738,18 @@
                 <div class="pricing-list">
                     <div class="pricing-item">
                         <div class="pricing-label">Small</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$12,000</div>
-                            <div class="timeline">~3 months</div>
-                        </div>
+                        <div class="timeline">~3 months</div>
+                        <div class="pricing-amount">$12,000</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Medium</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$20,000</div>
-                            <div class="timeline">~4-5 months</div>
-                        </div>
+                        <div class="timeline">~4-5 months</div>
+                        <div class="pricing-amount">$20,000</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Large</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">Starting at $32,000</div>
-                            <div class="timeline">~6+ months</div>
-                        </div>
+                        <div class="timeline">~6+ months</div>
+                        <div class="pricing-amount">Starting at $32,000</div>
                     </div>
                 </div>
             </article>
@@ -785,21 +773,18 @@
                 <div class="pricing-list">
                     <div class="pricing-item">
                         <div class="pricing-label">Small</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$2,500/month (up to 10 hrs/mo)</div>
-                        </div>
+                        <div class="timeline">up to 10 hrs/mo</div>
+                        <div class="pricing-amount">$2,500/month</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Medium</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$4,000/month (up to 15 hrs/mo)</div>
-                        </div>
+                        <div class="timeline">up to 15 hrs/mo</div>
+                        <div class="pricing-amount">$4,000/month</div>
                     </div>
                     <div class="pricing-item">
                         <div class="pricing-label">Large</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$150-$200/hour (depending on hours)</div>
-                        </div>
+                        <div class="timeline">depending on hours</div>
+                        <div class="pricing-amount">$150-$200/hour</div>
                     </div>
                 </div>
             </article>
@@ -822,22 +807,19 @@
                 </div>
                 <div class="pricing-list">
                     <div class="pricing-item">
-                        <div class="pricing-label">Small project (up to 6 months)</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$8,000</div>
-                        </div>
+                        <div class="pricing-label">Small project</div>
+                        <div class="timeline">up to 6 months</div>
+                        <div class="pricing-amount">$8,000</div>
                     </div>
                     <div class="pricing-item">
-                        <div class="pricing-label">Large project (6+ to 24 months)</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">$14,000</div>
-                        </div>
+                        <div class="pricing-label">Large project</div>
+                        <div class="timeline">6+ to 24 months</div>
+                        <div class="pricing-amount">$14,000</div>
                     </div>
                     <div class="pricing-item">
-                        <div class="pricing-label">Enterprise project (24+ months)</div>
-                        <div class="pricing-right">
-                            <div class="pricing-amount">Custom</div>
-                        </div>
+                        <div class="pricing-label">Enterprise project</div>
+                        <div class="timeline">24+ months</div>
+                        <div class="pricing-amount">Custom</div>
                     </div>
                 </div>
             </article>
@@ -850,22 +832,27 @@
                 <div class="addon-card">
                     <h3>Grant Support for Accessibility Projects</h3>
                     <p>We'll work with your grant writer to identify funding opportunities and strengthen accessibility sections in applications.</p>
-                    <div class="addon-pricing">$1,500-$3,000 per grant application (depending on complexity and hours needed with grant writer)</div>
+                    <div class="addon-pricing">
+                        <span class="price">$1,500-$3,000</span> <span class="description">per grant application (depending on complexity and hours needed with grant writer)</span>
+                    </div>
                 </div>
 
                 <div class="addon-card">
                     <h3>Procurement Accessibility Requirements</h3>
                     <p>Draft accessibility language for RFPs and vendor contracts, or review VPATs to verify vendor compliance.</p>
-                    <div class="addon-pricing">$1,500/project for small procurements<br>$3,000+ for large, multi-vendor RFPs</div>
+                    <div class="addon-pricing">
+                        <span class="price">$1,500</span><span class="description">/project for small procurements</span><br>
+                        <span class="price">$3,000+</span> <span class="description">for large, multi-vendor RFPs</span>
+                    </div>
                 </div>
 
                 <div class="addon-card">
                     <h3>Advanced or Custom Training Modules</h3>
                     <p>Workshops, recorded sessions, or department-specific modules tailored to your team.</p>
                     <div class="addon-pricing">
-                        1-Hour Micro-Session: $400<br>
-                        2-Hour Workshop: $900<br>
-                        Half-Day Workshop (3-4 hours): $2,000
+                        1-Hour Micro-Session: <span class="price">$400</span><br>
+                        2-Hour Workshop: <span class="price">$900</span><br>
+                        Half-Day Workshop (3-4 hours): <span class="price">$2,000</span>
                     </div>
                 </div>
             </div>
