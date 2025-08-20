@@ -536,6 +536,16 @@
             text-decoration: underline;
         }
 
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
@@ -827,11 +837,13 @@
             </div>
             <nav class="footer-links" aria-label="Footer navigation">
                 <h3>Information</h3>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="projects.html">Projects</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact.html">Contact</a>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>    
             </nav>
         </div>
     </footer>
