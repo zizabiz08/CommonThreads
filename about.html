@@ -165,9 +165,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
-            display: -webkit-grid;
             display: grid;
-            -webkit-grid-template-columns: 300px 1fr;
             grid-template-columns: 300px 1fr;
             gap: 3rem;
             align-items: center;
@@ -521,7 +519,7 @@
             }
 
             .hero-container {
-                grid-template-columns: 1fr;
+                display: block !important;
                 gap: 2rem;
                 text-align: center;
             }
@@ -599,7 +597,6 @@
     </style>
 </head>
 <body>
-    <div style="background: red; color: white; padding: 20px;">TEST - Can you see this red box?</div>
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
