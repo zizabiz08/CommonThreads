@@ -13,7 +13,6 @@
     
     <style>
         /* MADE Tommy Soft font from Creative Market */
-        /*
         @font-face {
             font-family: 'MADE Tommy Soft';
             src: url('fonts/made_tommy_soft_regular-webfont.woff2') format('woff2'),
@@ -31,7 +30,6 @@
             font-style: normal;
             font-display: swap;
         }
-        */
 
         /* Use MADE Tommy Soft for headings with Quicksand fallback */
         h1, h2, h3, h4, h5, h6 {
@@ -167,7 +165,9 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: -webkit-grid;
             display: grid;
+            -webkit-grid-template-columns: 300px 1fr;
             grid-template-columns: 300px 1fr;
             gap: 3rem;
             align-items: center;
