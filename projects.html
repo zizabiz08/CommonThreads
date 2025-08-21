@@ -653,21 +653,199 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Header -->
+    <header class="header" role="banner">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">Test Logo</a>
+                <img src="images/CTlogo_h.png" alt="Common Threads Logo">
             </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
-    <main>
-        <h1>Test Page</h1>
-        <p>This is a test to see if basic content works.</p>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero" aria-labelledby="hero-heading">
+            <div class="page-hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-heading">Representative Projects</h1>
+                    <p class="subtitle">Real-world examples of accessibility programs in action</p>
+                    <p>Every project looks different, but the goal is the same: build accessibility in, not bolt it on later. These representative projects show how we've helped organizations meet compliance requirements while creating sustainable processes their teams can carry forward. Whether it's a federal AI platform or a global design system, the approach is always practical, collaborative, and built for long-term success.</p>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/projects.jpg" alt="Two men consulting outside" />
+                    <div class="visual-placeholder">Add project consultation image here</div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Representative Projects -->
+        <section class="case-studies" aria-labelledby="case-studies-heading">
+            <div class="case-studies-container">
+                <h2 id="case-studies-heading" class="sr-only">Detailed Representative Projects</h2>
+                
+                <!-- LMI Case Study -->
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span class="meta-item">Federal Government</span>
+                            <span class="meta-item">Artificial Intelligence</span>
+                            <span class="meta-item">Section 508</span>
+                            <span class="meta-item">WCAG 2.1 AA</span>
+                        </div>
+                        <h3 class="case-study-title">LMI – Government-Facing GenAI Platform</h3>
+                        <p class="case-study-services">Services Provided: Accessibility Program Development, Section 508 Compliance, VPAT Documentation</p>
+                    </div>
+                    <div class="case-study-content">
+                        <div class="content-section">
+                            <h3>The Challenge</h3>
+                            <p>LMI was developing a generative AI tool for federal agencies. The platform needed to meet Section 508 standards, with formal compliance documentation in place, all while still in active development.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Our Approach</h3>
+                            <div class="process-flow">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Audit</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Remediation</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Process Building</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Documentation</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Conducted a full accessibility audit against WCAG 2.1 AA and Section 508</li>
+                                <li>Built an accessibility process into the product's design and development workflows</li>
+                                <li>Partnered with the design and engineering teams to troubleshoot issues in real time</li>
+                                <li>Created VPAT documentation so compliance was clear to federal stakeholders</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-section results-section">
+                            <h3>The Results</h3>
+                            <p>The platform launched fully Section 508 compliant. Just as importantly, the accessibility process we designed became part of the standard workflow, ensuring ongoing compliance as the product continues to evolve.</p>
+                        </div>
+
+                        <div class="content-section impact-section">
+                            <h3>Impact</h3>
+                            <p>This project shows how accessibility can be integrated into complex, emerging technologies without slowing delivery — and how process design can set a product up for long-term success.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GM Case Study -->
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span class="meta-item">Automotive</span>
+                            <span class="meta-item">Global Design Systems</span>
+                            <span class="meta-item">CVAA</span>
+                            <span class="meta-item">WCAG 2.1 AA</span>
+                        </div>
+                        <h3 class="case-study-title">General Motors – Accessibility in In-Vehicle Interfaces</h3>
+                        <p class="case-study-services">Services Provided: Accessibility Standards Development, CVAA Compliance, Design System Integration</p>
+                    </div>
+                    <div class="case-study-content">
+                        <div class="content-section">
+                            <h3>The Challenge</h3>
+                            <p>General Motors was developing a next-generation design system for in-vehicle interfaces and needed to integrate accessibility from the ground up. Since standard WCAG guidelines don't translate directly to automotive contexts, we needed to adapt accessibility principles specifically for in-vehicle digital systems while ensuring the solution could scale across multiple vehicle programs and product lines.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Our Approach</h3>
+                            <div class="process-flow">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Standards Development</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Design System Integration</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Training and Process Building</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Implementing Audits and Reviews</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Developed accessibility standards specific to in-vehicle digital systems</li>
+                                <li>Embedded accessible patterns into GM's global design system</li>
+                                <li>Collaborated with cross-functional teams to integrate accessibility into component libraries</li>
+                                <li>Verified compliance across multiple vehicle programs</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-section results-section">
+                            <h3>The Results</h3>
+                            <p>Accessibility became a built-in part of GM's next-generation design system, making it possible to deliver compliant in-vehicle interfaces at scale.</p>
+                        </div>
+
+                        <div class="content-section impact-section">
+                            <h3>Impact</h3>
+                            <p>By embedding accessibility into the design system itself, GM reduced rework, ensured compliance, and delivered more inclusive experiences to millions of drivers and passengers.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="cta-container">
+                <h2 id="cta-heading">Looking for practical guidance to get started?</h2>
+                <p>Beyond these project examples, we've created some helpful resources to support your accessibility planning. Check out our tools and templates to help you take the first steps toward compliance.</p>
+                <a href="resources.html" class="btn-primary">View Our Resources</a>
+            </div>
+        </section>
     </main>
-    
-    <footer class="footer">
-        <p>Test Footer</p>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="images/CTlogo_white.png" alt="Common Threads Logo">
+                </div>
+                <p class="footer-tagline">Accessibility + Human-Centered Design Expertise</p>
+            </div>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>    
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
