@@ -127,11 +127,11 @@
         }
 
         .nav-menu {
-            display: none;
+            display: flex;  /* Show horizontal menu on desktop */
         }
 
         .mobile-menu-toggle {
-            display: block;
+            display: none;  /* Hide hamburger on desktop */
         }
 
         .nav-menu a {
@@ -603,41 +603,46 @@
             .print-section,
             .nav-menu {
                 display: none;
-
-                .footer-container {
-                    grid-template-columns: 1fr;
-                    text-align: center;
-                    padding: 0 1rem;
-                    gap: 2rem;
-                }
-
-                body {
-                    font-size: 12pt;
-                    line-height: 1.4;
-                }
-
-                .package {
-                    page-break-inside: avoid;
-                    margin-bottom: 1rem;
-                    border: 1px solid #333;
-                }
-
-                .package-title {
-                    color: #000;
-                }
-
-                .size-definitions h2,
-                .packages-section h2,
-                .addons-section h2,
-                .footer-section h2 {
-                    color: #000;
-                }
-
-                .deadline-notice {
-                    border: 1px solid #333;
-                    background: #f0f0f0;
-                }
             }
+
+            .mobile-menu-toggle {
+                display: block;
+            }           
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 1rem;
+                gap: 2rem;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .package {
+                page-break-inside: avoid;
+                margin-bottom: 1rem;
+                border: 1px solid #333;
+            }
+
+            .package-title {
+                color: #000;
+            }
+
+            .size-definitions h2,
+            .packages-section h2,
+            .addons-section h2,
+            .footer-section h2 {
+                color: #000;
+            }
+
+            .deadline-notice {
+                border: 1px solid #333;
+                background: #f0f0f0;
+            }
+        }
                 
             /* Responsive Design */
              (max-width: 768px) {
