@@ -80,6 +80,7 @@
             background: white;
             padding: 1rem 0;
             border-bottom: 1px solid #eee;
+            position: relative;
         }
 
         .nav-container {
@@ -133,6 +134,61 @@
 
         .nav-menu a:hover {
             color: #2c5aa0;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #2c5aa0;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: #2c5aa0;
+            background: #f8f9fa;
         }
 
         .nav-menu a.active {
@@ -506,6 +562,10 @@
                 display: none;
             }
 
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .hero {
                 min-height: 50vh;
                 padding: 6rem 0 3rem 0;
@@ -589,14 +649,30 @@
             </div>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+                
+                <!-- Mobile navigation -->
+                <div class="mobile-nav" id="mobileNav">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -736,5 +812,28 @@
             </nav>
         </div>
     </footer>
+    <script>
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        
+        if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
+            mobileNav.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
