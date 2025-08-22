@@ -15,9 +15,8 @@
         /* MADE Tommy Soft font from Creative Market */
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft.woff') format('woff'),
-                 url('fonts/made-tommy-soft.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_regular-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_regular-webfont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -25,9 +24,8 @@
         
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft-medium.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft-medium.woff') format('woff'),
-                 url('fonts/made-tommy-soft-medium.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_medium-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_medium-webfont.woff') format('woff');
             font-weight: 500;
             font-style: normal;
             font-display: swap;
@@ -97,14 +95,14 @@
         }
 
         /* Logo smart sizing */
-            .logo img {
+        .logo img {
             height: 60px;
             width: auto;
             object-fit: contain;
             display: block;
         }
 
-         .footer-logo img {
+        .footer-logo img {
             height: 50px !important;
             width: auto !important;
             object-fit: contain;
@@ -113,11 +111,9 @@
         }
 
         .nav-menu {
-            display: none;
-        }
-
-        .mobile-menu-toggle {
-            display: block;
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
         .nav-menu a {
@@ -126,8 +122,10 @@
             font-weight: 500;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:hover,
+        .nav-menu a.active {
             color: #2c5aa0;
+            font-weight: 600;
         }
 
         /* Mobile menu styles */
@@ -183,11 +181,6 @@
         .mobile-nav a.active {
             color: #2c5aa0;
             background: #f8f9fa;
-        }
-
-        .nav-menu a.active {
-            color: #2c5aa0;
-            font-weight: 600;
         }
 
         /* Page Hero */
@@ -611,7 +604,11 @@
             }
 
             .nav-menu {
-                display: none;
+                display: none !important;
+            }
+
+            .mobile-menu-toggle {
+                display: block !important;
             }
 
             .page-hero {
@@ -721,7 +718,7 @@
                 <ul class="nav-menu">
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -737,7 +734,7 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="projects.html" class="active">Projects</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="resources.html">Resources</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -767,8 +764,6 @@
             </div>
         </section>
 
-
-
         <!-- Representative Projects -->
         <section class="case-studies" aria-labelledby="case-studies-heading">
             <div class="case-studies-container">
@@ -783,7 +778,7 @@
                             <span class="meta-item">Section 508</span>
                             <span class="meta-item">WCAG 2.1 AA</span>
                         </div>
-                        <h3 class="case-study-title">LMI – Government-Facing GenAI Platform</h3>
+                        <h3 class="case-study-title">LMI — Government-Facing GenAI Platform</h3>
                         <p class="case-study-services">Services Provided: Accessibility Program Development, Section 508 Compliance, VPAT Documentation</p>
                     </div>
                     <div class="case-study-content">
@@ -841,7 +836,7 @@
                             <span class="meta-item">CVAA</span>
                             <span class="meta-item">WCAG 2.1 AA</span>
                         </div>
-                        <h3 class="case-study-title">General Motors – Accessibility in In-Vehicle Interfaces</h3>
+                        <h3 class="case-study-title">General Motors — Accessibility in In-Vehicle Interfaces</h3>
                         <p class="case-study-services">Services Provided: Accessibility Standards Development, CVAA Compliance, Design System Integration</p>
                     </div>
                     <div class="case-study-content">
