@@ -439,6 +439,7 @@
             box-shadow: 0 8px 20px rgba(44, 90, 160, 0.2) !important;
         }
 
+
         /* Representative Projects */
         .projects {
             padding: 4rem 0;
@@ -774,6 +775,12 @@
             .step-content p {
                 font-size: 0.9rem;
             }
+
+        @media (max-width: 768px) {
+            .image-text-section {
+                grid-template-columns: 1fr !important;
+            }
+            }
         }
     </style>
 </head>
@@ -847,6 +854,17 @@
                 <div class="column">
                     <h3>Build Real Capability</h3>
                     <p>We don't just audit and leave. We guide your team through procurement, verify fixes, train staff, and help you maintain accessibility long-term.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership -->
+            <section style="background: white; padding: 4rem 0;">
+            <div class="image-text-section" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <img src="images/working-together.jpg" alt="Collaborative accessibility work" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div>
+                    <h2 style="color: #2c5aa0; margin-bottom: 1rem;">Your accessibility partner, not another vendor</h2>
+                    <p style="color: #2d2d2d; line-height: 1.6;">We work alongside your team and your vendors to ensure true accessibility. No sales pitches, no proprietary tools — just honest guidance and verification you can trust.</p>
                 </div>
             </div>
         </section>
