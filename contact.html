@@ -295,6 +295,21 @@
             color: #2c5aa0;
         }
 
+        .form-error-notice {
+            background: #f8d7da;
+            border: 1px solid #f5c2c7;
+            border-left: 4px solid #842029;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #842029;
+        }
+
+        .form-error-notice a {
+            color: #842029;
+            font-weight: 600;
+        }
+
         .form-group {
             margin-bottom: 1rem;
         }
@@ -669,9 +684,11 @@
                     <div class="form-success-notice" id="formSuccessNotice" hidden role="status">
                         <strong>Thanks!</strong> Your message has been sent - we'll be in touch soon.
                     </div>
-                    <form action="https://formspree.io/f/xbdvvwod" method="POST" aria-label="Contact form">
+                    <div class="form-error-notice" id="formErrorNotice" hidden role="alert">
+                        <strong>Something went wrong.</strong> Please try again, or email <a href="mailto:hannah@commonthreadsdigital.com">hannah@commonthreadsdigital.com</a> directly.
+                    </div>
+                    <form action="https://formspree.io/f/xbdvvwod" method="POST" id="contactForm" aria-label="Contact form">
                         <input type="hidden" name="_subject" value="New message from Common Threads contact form">
-                        <input type="hidden" name="_next" value="https://commonthreadsdigital.com/contact.html?sent=true">
                         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -787,10 +804,43 @@
         });
     });
 
-    // Show a confirmation banner after Formspree redirects back with ?sent=true
-    if (new URLSearchParams(window.location.search).get('sent') === 'true') {
-        document.getElementById('formSuccessNotice').hidden = false;
-        history.replaceState(null, '', window.location.pathname);
+    // Submit the contact form in the background so the page never navigates away
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const successNotice = document.getElementById('formSuccessNotice');
+            const errorNotice = document.getElementById('formErrorNotice');
+
+            successNotice.hidden = true;
+            errorNotice.hidden = true;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' },
+            })
+                .then(function(response) {
+                    if (response.ok) {
+                        contactForm.reset();
+                        successNotice.hidden = false;
+                        successNotice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        errorNotice.hidden = false;
+                    }
+                })
+                .catch(function() {
+                    errorNotice.hidden = false;
+                })
+                .finally(function() {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                });
+        });
     }
 </script>
 </body>
