@@ -25,19 +25,17 @@
         /* MADE Tommy Soft font from Creative Market */
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft.woff') format('woff'),
-                 url('fonts/made-tommy-soft.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_regular-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_regular-webfont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft-medium.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft-medium.woff') format('woff'),
-                 url('fonts/made-tommy-soft-medium.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_medium-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_medium-webfont.woff') format('woff');
             font-weight: 500;
             font-style: normal;
             font-display: swap;
@@ -99,7 +97,7 @@
             align-items: center;
         }
 
-        .logo {
+        .logo a {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -107,6 +105,17 @@
             font-size: 1.1rem;
             color: #2c5aa0;
             text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        .logo a:focus {
+            outline: 3px solid #ffb000;
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
         /* Logo smart sizing */
@@ -230,7 +239,7 @@
         }
 
         .contact-hero h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #2c5aa0;
             margin-bottom: 1rem;
@@ -239,7 +248,7 @@
 
         .contact-hero p {
             font-size: 1.1rem;
-            color: #2d2d2d;
+            color: #333;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -270,6 +279,20 @@
             color: #2c5aa0;
             margin-bottom: 1rem;
             font-size: 1.4rem;
+        }
+
+        .form-success-notice {
+            background: #e8f4f8;
+            border: 1px solid #b3d9ed;
+            border-left: 4px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .form-success-notice strong {
+            color: #2c5aa0;
         }
 
         .form-group {
@@ -365,7 +388,7 @@
         }
 
         .contact-method p {
-            color: #2d2d2d;
+            color: #333;
             margin-bottom: 0.5rem;
         }
 
@@ -394,7 +417,7 @@
         }
 
         .schedule-section p {
-            color: #2d2d2d;
+            color: #333;
             margin-bottom: 1.5rem;
         }
 
@@ -438,7 +461,7 @@
         }
 
         .how-i-work p {
-            color: #2d2d2d;
+            color: #333;
             font-size: 1.1rem;
             line-height: 1.6;
             max-width: 800px;
@@ -589,9 +612,11 @@
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/CTlogo_h.png" alt="Common Threads - Accessible digital strategies for the public good">
-            </a>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/CTlogo_h.png" alt="Common Threads Logo">
+                </a>
+            </div>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-menu">
                     <li><a href="about.html">About</a></li>
@@ -599,7 +624,7 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
                 
                 <!-- Mobile menu toggle -->
@@ -615,7 +640,7 @@
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="resources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -641,7 +666,13 @@
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h2>Send a Message</h2>
-                    <form action="#" method="POST" aria-label="Contact form">
+                    <div class="form-success-notice" id="formSuccessNotice" hidden role="status">
+                        <strong>Thanks!</strong> Your message has been sent - we'll be in touch soon.
+                    </div>
+                    <form action="https://formspree.io/f/xbdvvwod" method="POST" aria-label="Contact form">
+                        <input type="hidden" name="_subject" value="New message from Common Threads contact form">
+                        <input type="hidden" name="_next" value="https://commonthreadsdigital.com/contact.html?sent=true">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required aria-required="true">
@@ -716,9 +747,9 @@
         <div class="footer-container">
             <div>
                 <div class="footer-logo">
-                    <img src="images/CTlogo_white.png" alt="Common Threads logo">
+                    <img src="images/CTlogo_white.png" alt="Common Threads Logo">
                 </div>
-                <p class="footer-tagline">Accessibility + Human-Centered Design Expertise</p>
+                <p class="footer-tagline">Accessible digital strategies for the public good</p>
             </div>
             <nav class="footer-links" aria-label="Footer navigation">
                 <h3>Information</h3>
@@ -755,6 +786,12 @@
             document.getElementById('mobileNav').classList.remove('active');
         });
     });
+
+    // Show a confirmation banner after Formspree redirects back with ?sent=true
+    if (new URLSearchParams(window.location.search).get('sent') === 'true') {
+        document.getElementById('formSuccessNotice').hidden = false;
+        history.replaceState(null, '', window.location.pathname);
+    }
 </script>
 </body>
 </html>

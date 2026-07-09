@@ -95,7 +95,7 @@
             align-items: center;
         }
 
-        .logo {
+        .logo a {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -103,6 +103,17 @@
             font-size: 1.1rem;
             color: #2c5aa0;
             text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        .logo a:focus {
+            outline: 3px solid #ffb000;
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
         /* Logo smart sizing */
@@ -227,7 +238,7 @@
 
         .hero-content p {
             font-size: 1.1rem;
-            color: #2d2d2d;
+            color: #333;
             line-height: 1.6;
             text-align: left;
         }
@@ -424,14 +435,14 @@
         }
 
         .content-section p {
-            color: #2d2d2d;
+            color: #333;
             line-height: 1.6;
             margin-bottom: 1rem;
         }
 
         .content-section ul {
             margin-left: 1.5rem;
-            color: #2d2d2d;
+            color: #333;
         }
 
         .content-section li {
@@ -529,7 +540,7 @@
         }
 
         .cta-section p {
-            color: #2d2d2d;
+            color: #333;
             font-size: 1.1rem;
             margin-bottom: 2rem;
             line-height: 1.6;
@@ -538,7 +549,7 @@
         .btn-primary {
             background: #2c5aa0;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             text-decoration: none;
@@ -722,9 +733,11 @@
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/CTlogo_h.png" alt="Common Threads - Accessible digital strategies for the public good">
-            </a>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/CTlogo_h.png" alt="Common Threads Logo">
+                </a>
+            </div>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-menu">
                     <li><a href="about.html">About</a></li>
@@ -915,7 +928,7 @@
                 <div class="footer-logo">
                     <img src="images/CTlogo_white.png" alt="Common Threads Logo">
                 </div>
-                <p class="footer-tagline">Accessibility + Human-Centered Design Expertise</p>
+                <p class="footer-tagline">Accessible digital strategies for the public good</p>
             </div>
             <nav class="footer-links" aria-label="Footer navigation">
                 <h3>Information</h3>

@@ -25,19 +25,17 @@
         /* MADE Tommy Soft font from Creative Market */
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft.woff') format('woff'),
-                 url('fonts/made-tommy-soft.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_regular-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_regular-webfont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'MADE Tommy Soft';
-            src: url('fonts/made-tommy-soft-medium.woff2') format('woff2'),
-                 url('fonts/made-tommy-soft-medium.woff') format('woff'),
-                 url('fonts/made-tommy-soft-medium.ttf') format('truetype');
+            src: url('fonts/made_tommy_soft_medium-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_medium-webfont.woff') format('woff');
             font-weight: 500;
             font-style: normal;
             font-display: swap;
@@ -144,6 +142,10 @@
             font-weight: 500;
         }
 
+        .nav-menu a:hover {
+            color: #2c5aa0;
+        }
+
         /* Mobile menu styles */
         .mobile-menu-toggle {
             display: none;
@@ -232,7 +234,7 @@
         }
 
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #2c5aa0;
             margin-bottom: 1rem;
@@ -241,7 +243,7 @@
 
         .hero p {
             font-size: 1.1rem;
-            color: #2d2d2d;
+            color: #333;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -314,7 +316,7 @@
         }
 
         .resource-header p {
-            color: #2d2d2d;
+            color: #333;
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -359,7 +361,7 @@
         .btn-primary {
             background: #2c5aa0;
             color: white;
-            padding: 0.7rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             text-decoration: none;
@@ -379,7 +381,7 @@
         .btn-secondary {
             background: white;
             color: #2c5aa0;
-            padding: 0.7rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border: 2px solid #2c5aa0;
             border-radius: 4px;
             text-decoration: none;
@@ -416,7 +418,7 @@
         }
 
         .coming-soon p {
-            color: #2d2d2d;
+            color: #333;
             margin-bottom: 2rem;
             line-height: 1.6;
         }
@@ -513,6 +515,16 @@
             color: white;
         }
 
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
@@ -604,9 +616,9 @@
                 <ul class="nav-menu">
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Representative Projects</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 
@@ -620,9 +632,9 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Representative Projects</a></li>
+                        <li><a href="projects.html">Projects</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="resources.html" class="active">Resources</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -718,16 +730,18 @@
                 <div class="footer-logo">
                     <img src="images/CTlogo_white.png" alt="Common Threads Logo">
                 </div>
-                <p class="footer-tagline">Accessibility + Human-Centered Design Expertise</p>
+                <p class="footer-tagline">Accessible digital strategies for the public good</p>
             </div>
             <nav class="footer-links" aria-label="Footer navigation">
                 <h3>Information</h3>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html">Contact</a>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </footer>
