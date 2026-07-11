@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Representative Projects - Common Threads</title>
-    <meta name="description" content="Real-world examples of accessibility programs in action. See how Common Threads has helped federal agencies and global companies build sustainable accessibility into their digital systems.">
+    <meta name="description" content="See how this work actually goes, from a Michigan city's digital accessibility strategy to a voter services site at one of the country's largest election jurisdictions.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -472,9 +472,39 @@
         /* Process visualization */
         .process-flow {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin: 1.5rem 0;
+        }
+
+        /* Client logo sitting beside the Challenge text */
+        .challenge-with-logo {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .client-logo {
+            width: 100%;
+            padding-top: 0.25rem;
+        }
+
+        .client-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .challenge-with-logo {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .client-logo {
+                max-width: 160px;
+            }
         }
 
         .process-step {
@@ -522,8 +552,8 @@
 
         /* CTA Section */
         .cta-section {
-            background: white;
-            padding: 4rem 0;
+            background: linear-gradient(135deg, #ffc5c5 0%, #ffb3ba 50%, #ffd1a3 100%);
+            padding: 2rem 0;
             text-align: center;
         }
 
@@ -777,9 +807,9 @@
         <section class="page-hero" aria-labelledby="hero-heading">
             <div class="page-hero-container">
                 <div class="hero-content">
-                    <h1 id="hero-heading">Representative Projects</h1>
-                    <p class="subtitle">Real-world examples of accessibility programs in action</p>
-                    <p>Every project looks different, but the goal is the same: build accessibility in, not bolt it on later. These representative projects show how we've helped organizations meet compliance requirements while creating sustainable processes their teams can carry forward. Whether it's a federal AI platform or a global design system, the approach is always practical, collaborative, and built for long-term success.</p>
+                    <h1 id="hero-heading">Projects</h1>
+                    <p class="subtitle">A look at how this work actually goes</p>
+                    <p>Every community is different, but the goal is the same: build accessibility in rather than bolt it on later. These projects show how I work, from a Michigan city sorting out its full digital presence to a voter services site at one of the country's largest election jurisdictions. The approach is always practical, collaborative, and sized to fit what you actually need.</p>
                 </div>
                 <div class="hero-visual">
                     <img src="images/projects.jpg" alt="Two men consulting outside" />
@@ -792,7 +822,143 @@
         <section class="case-studies" aria-labelledby="case-studies-heading">
             <div class="case-studies-container">
                 <h2 id="case-studies-heading" class="sr-only">Detailed Representative Projects</h2>
-                
+
+                <!-- City of Troy Case Study -->
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span class="meta-item">Michigan Local Government</span>
+                            <span class="meta-item">Municipal Websites</span>
+                            <span class="meta-item">Mobile App</span>
+                            <span class="meta-item">WCAG 2.1 AA</span>
+                        </div>
+                        <h3 class="case-study-title">City of Troy — Digital Accessibility Strategy</h3>
+                        <p class="case-study-services">Services Provided: Targeted Manual Audit, Remediation Roadmap, Staff Training</p>
+                    </div>
+                    <div class="case-study-content">
+                        <div class="content-section">
+                            <div class="challenge-with-logo">
+                                <div class="client-logo">
+                                    <img src="images/CityTroy_sm.png" alt="City of Troy">
+                                </div>
+                                <div>
+                                    <h3>The Challenge</h3>
+                                    <p>The City of Troy came to me through a referral from another Michigan city. They already understood something a lot of communities miss: their digital presence is bigger than their main website. Subsites, a mobile app, PDFs, and social content all reach residents, and all of it needs to be accessible. What they needed was a clear picture of where they stood and a plan that fit the budget they actually had.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>My Approach</h3>
+                            <div class="process-flow">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Targeted Manual Audit</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Honest Assessment</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Roadmap and Timeline</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Staff Training</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Ran a targeted manual audit of the main site, subsites, and mobile app, focusing on what matters most to residents</li>
+                                <li>Gave a straight assessment of where things stood, with no sugarcoating and no scare tactics</li>
+                                <li>Built a practical roadmap and timeline the team could actually follow</li>
+                                <li>Trained staff across the organization, from accessibility fundamentals through applying them to everyday work like social media</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-section results-section">
+                            <h3>The Results</h3>
+                            <p>Troy came away with an honest picture of their digital accessibility, a prioritized plan for improving it, and a staff better equipped to carry the work forward. The audit was targeted by design rather than exhaustive, which meant the budget went toward the issues with the biggest impact on residents.</p>
+                        </div>
+
+                        <div class="content-section impact-section">
+                            <h3>Impact</h3>
+                            <p>Accessibility work doesn't have to start with a huge contract. Starting where it counts, with a clear plan and a team that understands why it matters, is often the difference between a report that sits on a shelf and real progress.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- USDR Case Study -->
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span class="meta-item">Election Services</span>
+                            <span class="meta-item">Volunteer Engagement</span>
+                            <span class="meta-item">U.S. Digital Response</span>
+                            <span class="meta-item">WCAG 2.1 AA</span>
+                        </div>
+                        <h3 class="case-study-title">U.S. Digital Response — Voter Services Strategy</h3>
+                        <p class="case-study-services">Services Provided: Accessibility Assessment, Strategic Recommendations (Volunteer)</p>
+                    </div>
+                    <div class="case-study-content">
+                        <div class="content-section">
+                            <div class="challenge-with-logo">
+                                <div class="client-logo">
+                                    <img src="images/USDR_sm.png" alt="U.S. Digital Response">
+                                </div>
+                                <div>
+                                    <h3>The Challenge</h3>
+                                    <p>Voter services sites carry a heavy responsibility. Every resident needs to be able to find what they need, understand it, and act on it, regardless of ability, reading level, or how they get online. One of the largest election jurisdictions in the country wanted to make its voter services site clearer and easier to use, and asked U.S. Digital Response for help.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>My Approach</h3>
+                            <div class="process-flow">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Assess</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Identify Barriers</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Recommend</div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Plan</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Joined a four-person volunteer team through U.S. Digital Response, serving as the accessibility lead</li>
+                                <li>Assessed the voter services site for accessibility alongside teammates focused on content and user experience</li>
+                                <li>Identified the barriers standing between residents and the information they needed</li>
+                                <li>Delivered clear recommendations and a plan for making the site easier to navigate, understand, and access</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-section results-section">
+                            <h3>The Results</h3>
+                            <p>The jurisdiction received a practical set of recommendations for improving how residents find and use voter information, with accessibility built into the plan rather than treated as a separate fix.</p>
+                        </div>
+
+                        <div class="content-section impact-section">
+                            <h3>Impact</h3>
+                            <p>Election information has to work for everyone. Accessibility, plain language, and clear navigation aren't separate goals, they're the same goal. The most important public services are exactly the ones that deserve the most care.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Prior experience divider -->
+                <div style="margin: 4rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #e0e0e0;">
+                    <h2 style="color: #2c5aa0; font-size: 1.75rem; margin-bottom: 0.75rem;">Prior experience</h2>
+                    <p style="color: #333; line-height: 1.6; max-width: 800px;">Before focusing on Michigan local government, I built accessibility programs at a larger scale. This earlier work is what taught me how accessibility holds up under real complexity, and why doing it well from the start matters so much.</p>
+                </div>
+
                 <!-- LMI Case Study -->
                 <article class="case-study">
                     <div class="case-study-header">
@@ -812,7 +978,7 @@
                         </div>
 
                         <div class="content-section">
-                            <h3>Our Approach</h3>
+                            <h3>My Approach</h3>
                             <div class="process-flow">
                                 <div class="process-step">
                                     <div class="step-number">1</div>
@@ -841,7 +1007,7 @@
 
                         <div class="content-section results-section">
                             <h3>The Results</h3>
-                            <p>The platform launched fully Section 508 compliant. Just as importantly, the accessibility process we designed became part of the standard workflow, ensuring ongoing compliance as the product continues to evolve.</p>
+                            <p>The platform launched fully Section 508 compliant. Just as importantly, the accessibility process I designed became part of the standard workflow, ensuring ongoing compliance as the product continues to evolve.</p>
                         </div>
 
                         <div class="content-section impact-section">
@@ -866,11 +1032,11 @@
                     <div class="case-study-content">
                         <div class="content-section">
                             <h3>The Challenge</h3>
-                            <p>General Motors was developing a next-generation design system for in-vehicle interfaces and needed to integrate accessibility from the ground up. Since standard WCAG guidelines don't translate directly to automotive contexts, we needed to adapt accessibility principles specifically for in-vehicle digital systems while ensuring the solution could scale across multiple vehicle programs and product lines.</p>
+                            <p>General Motors was developing a next-generation design system for in-vehicle interfaces and needed to integrate accessibility from the ground up. Since standard WCAG guidelines don't translate directly to automotive contexts, I needed to adapt accessibility principles specifically for in-vehicle digital systems while ensuring the solution could scale across multiple vehicle programs and product lines.</p>
                         </div>
 
                         <div class="content-section">
-                            <h3>Our Approach</h3>
+                            <h3>My Approach</h3>
                             <div class="process-flow">
                                 <div class="process-step">
                                     <div class="step-number">1</div>
@@ -914,9 +1080,8 @@
         <!-- CTA Section -->
         <section class="cta-section" aria-labelledby="cta-heading">
             <div class="cta-container">
-                <h2 id="cta-heading">Looking for practical guidance to get started?</h2>
-                <p>Beyond these project examples, we've created some helpful resources to support your accessibility planning. Check out our tools and templates to help you take the first steps toward compliance.</p>
-                <a href="resources.html" class="btn-primary">View Our Resources</a>
+                <h2 id="cta-heading" class="sr-only">Get in touch</h2>
+                <p style="margin: 0; color: #1a1a1a; font-size: 1.05rem;">Curious what this would look like for your community? <a href="contact.html" style="color: #1e4080; font-weight: 600;">Get in touch.</a></p>
             </div>
         </section>
     </main>
