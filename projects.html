@@ -62,7 +62,7 @@
         /* Focus styles for keyboard navigation */
         a:focus,
         button:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
@@ -111,7 +111,7 @@
         }
 
         .logo a:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
             border-radius: 4px;
         }
@@ -223,7 +223,7 @@
 
         .hero-content h1 {
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 600;
             color: #2c5aa0;
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -270,15 +270,6 @@
             left: 0;
             z-index: 1;
             max-height: none;
-        }
-
-        .visual-placeholder {
-            position: relative;
-            z-index: 0;
-            color: #2c5aa0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
         }
 
         /* Projects Overview Stats */
@@ -376,7 +367,6 @@
 
         .case-study-services {
             font-size: 1rem;
-            opacity: 0.9;
             position: relative;
             z-index: 1;
         }
@@ -722,6 +712,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
@@ -741,7 +734,7 @@
                 </ul>
                 
                 <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">
                     ☰
                 </button>
                 
@@ -760,9 +753,6 @@
         </div>
     </header>
 
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
-
     <!-- Main content -->
     <main id="main-content">
         <!-- Page Hero -->
@@ -774,7 +764,6 @@
                 </div>
                 <div class="hero-visual">
                     <img src="images/inghamcounty.png" alt="Ingham County Courthouse" />
-                    <div class="visual-placeholder">Add project consultation image here</div>
                 </div>
             </div>
         </section>
@@ -1018,7 +1007,7 @@
         <section class="cta-section" aria-labelledby="cta-heading">
             <div class="cta-container">
                 <h2 id="cta-heading" class="sr-only">Get in touch</h2>
-                <p style="margin: 0; color: #1a1a1a; font-size: 1.05rem;">Curious what this would look like for your community? <a href="contact.html" style="color: #1e4080; font-weight: 600;">Get in touch.</a></p>
+                <p style="margin: 0; color: #1a1a1a; font-size: 1.05rem;">Curious what this would look like for your community? <a href="contact.html" style="color: #0f2a52; font-weight: 600;">Get in touch.</a></p>
             </div>
         </section>
     </main>
@@ -1048,16 +1037,19 @@
     <script>
     function toggleMobileMenu() {
         const mobileNav = document.getElementById('mobileNav');
-        mobileNav.classList.toggle('active');
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const isOpen = mobileNav.classList.toggle('active');
+        toggleButton.setAttribute('aria-expanded', isOpen);
     }
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const mobileNav = document.getElementById('mobileNav');
         const toggleButton = document.querySelector('.mobile-menu-toggle');
-        
+
         if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
             mobileNav.classList.remove('active');
+            toggleButton.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -1065,6 +1057,7 @@
     document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', function() {
             document.getElementById('mobileNav').classList.remove('active');
+            document.querySelector('.mobile-menu-toggle').setAttribute('aria-expanded', 'false');
         });
     });
 </script>

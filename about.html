@@ -63,12 +63,12 @@
         /* Focus styles */
         a:focus,
         button:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
         .btn-primary:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
@@ -117,7 +117,7 @@
         }
 
         .logo a:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
             border-radius: 4px;
         }
@@ -679,6 +679,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
@@ -698,7 +701,7 @@
                 </ul>
                 
                 <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">
                     ☰
                 </button>
                 
@@ -717,27 +720,24 @@
         </div>
     </header>
 
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
-
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-heading-wrap">
-            <h1 id="hero-heading">About</h1>
-        </div>
-        <div class="hero-container">
-            <div class="hero-image" role="img" aria-label="Hannah Wagner photo">
-            </div>
-            <div class="hero-content">
-                <p class="hero-subtitle">Hi, I'm Hannah Wagner.</p>
-                <p class="intro-text" style="margin-bottom: 1.5rem;">I started Common Threads to help Michigan communities navigate digital accessibility with confidence. I work mostly with cities and counties, and I'm here as your independent advisor, helping you understand where you stand, what comes next, and how to build accessibility into the way your team already works.</p>
-                <p class="intro-text">I work alongside your team and the vendors you already trust, translating complicated requirements into steps that make sense for your budget and your capacity. I'm not a national firm passing through. This is my state too, and I care how it turns out for your community.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Main content -->
     <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-heading-wrap">
+                <h1 id="hero-heading">About</h1>
+            </div>
+            <div class="hero-container">
+                <div class="hero-image" role="img" aria-label="Hannah Wagner photo">
+                </div>
+                <div class="hero-content">
+                    <p class="hero-subtitle">Hi, I'm Hannah Wagner.</p>
+                    <p class="intro-text" style="margin-bottom: 1.5rem;">I started Common Threads to help Michigan communities navigate digital accessibility with confidence. I work mostly with cities and counties, and I'm here as your independent advisor, helping you understand where you stand, what comes next, and how to build accessibility into the way your team already works.</p>
+                    <p class="intro-text">I work alongside your team and the vendors you already trust, translating complicated requirements into steps that make sense for your budget and your capacity. I'm not a national firm passing through. This is my state too, and I care how it turns out for your community.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Background & Experience -->
         <section class="content-section">
             <div class="main-content">
@@ -861,16 +861,19 @@
     <script>
     function toggleMobileMenu() {
         const mobileNav = document.getElementById('mobileNav');
-        mobileNav.classList.toggle('active');
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const isOpen = mobileNav.classList.toggle('active');
+        toggleButton.setAttribute('aria-expanded', isOpen);
     }
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const mobileNav = document.getElementById('mobileNav');
         const toggleButton = document.querySelector('.mobile-menu-toggle');
-        
+
         if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
             mobileNav.classList.remove('active');
+            toggleButton.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -878,6 +881,7 @@
     document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', function() {
             document.getElementById('mobileNav').classList.remove('active');
+            document.querySelector('.mobile-menu-toggle').setAttribute('aria-expanded', 'false');
         });
     });
 </script>

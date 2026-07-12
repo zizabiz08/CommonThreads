@@ -70,14 +70,14 @@
         /* Focus styles */
         a:focus,
         button:focus {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
         /* Modern focus-visible for keyboard-only focus */
         a:focus-visible,
         button:focus-visible {
-            outline: 3px solid #ffb000;
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
@@ -88,9 +88,8 @@
         }
 
         .btn-primary:focus,
-        .btn-secondary:focus,
-        .btn-print:focus {
-            outline: 3px solid #ffb000;
+        .btn-secondary:focus {
+            outline: 3px solid #0f2a52;
             outline-offset: 2px;
         }
 
@@ -242,11 +241,14 @@
             background: linear-gradient(135deg, #ffc5c5 0%, #ffb3ba 50%, #ffd1a3 100%);
             padding: 4rem 2rem;
             text-align: center;
+            margin-top: -3rem;
             margin-bottom: 0;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
         }
 
         .page-header h1 {
-            color: #1e4080;
+            color: #0f2a52;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
@@ -286,34 +288,6 @@
 
         .deadline-notice strong {
             color: #2c5aa0;
-        }
-
-        /* Print Button */
-        .print-section {
-            text-align: center;
-            margin-top: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .btn-print {
-            background: #2c5aa0;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-print:hover {
-            background: #1e4080;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
         }
 
         /* Package Size Definitions */
@@ -396,154 +370,6 @@
             margin-bottom: 2rem;
         }
 
-        .package {
-            background: white;
-            border: 1px solid #2c5aa0;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .package:hover {
-            border-color: #2c5aa0;
-            box-shadow: 0 8px 24px rgba(44, 90, 160, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .package-header {
-            border-bottom: 1px solid #2c5aa0;
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .package-title {
-            color: #2c5aa0;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .package-subtitle {
-            color: #666;
-            font-style: italic;
-        }
-
-        .package-description {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .package-features {
-            margin-bottom: 1.5rem;
-        }
-
-        .package-features ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .package-features li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .package-features li:before {
-            content: "✓";
-            color: #2c5aa0;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .pricing-list {
-            margin-top: 1rem;
-        }
-
-        .pricing-item {
-            display: grid;
-            grid-template-columns: 1fr 150px 1fr;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #2c5aa0;
-        }
-
-        .pricing-item:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-label {
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .pricing-amount {
-            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #333;
-            text-align: right;
-        }
-
-        .timeline {
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-        }
-
-        /* Add-ons */
-        .addons-section {
-            margin-top: 5rem;
-            margin-bottom: 3rem;
-            padding-top: 3rem;
-        }
-
-        .addons-section h2 {
-            color: #2c5aa0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .addons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .addon-card {
-            background: white;
-            border: 1px solid #2c5aa0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .addon-card:hover {
-            border-color: #2c5aa0;
-            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .addon-card h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-        }
-
-        .addon-pricing {
-            margin-top: 1rem;
-        }
-
-        .addon-pricing .price {
-            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .addon-pricing .description {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 400;
-            color: #666;
-        }
 
         /* Footer sections */
         .footer-section {
@@ -796,101 +622,6 @@
             white-space: nowrap;
         }
 
-        /* Callout Box Styles */
-        .callout-box {
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
-            border: 2px solid #2c5aa0;
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            margin: 3rem 0;
-        }
-
-        .callout-box h3 {
-            color: #2c5aa0;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .callout-box p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .callout-box h4 {
-            color: #333;
-            margin: 1.5rem 0 1rem;
-            font-size: 1.1rem;
-        }
-
-        .callout-box ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        .callout-box li {
-            padding: 0.4rem 0 0.4rem 1.5rem;
-            position: relative;
-        }
-
-        .callout-box li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c5aa0;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .project-pricing {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-        }
-
-        .emphasized-note {
-            font-style: italic;
-            color: #666;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* Addon Category Styles */
-        .addon-category {
-            margin-bottom: 2.5rem;
-        }
-
-        .addon-category h3 {
-            color: #2c5aa0;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .addon-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid #2c5aa0;
-        }
-
-        .addon-item h4 {
-            color: #333;
-            margin-bottom: 0.75rem;
-        }
-
-        .addon-item p {
-            color: #666;
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .addon-item .addon-pricing {
-            font-weight: 600;
-            color: #2c5aa0;
-        }
-
         /* Custom Programs Section */
         .custom-programs {
             background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
@@ -912,30 +643,6 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #333;
-        }
-
-        .custom-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .custom-example {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #b3d9ed;
-        }
-
-        .custom-example strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c5aa0;
-        }
-
-        .custom-example p {
-            color: #666;
         }
 
         .cta-button {
@@ -990,14 +697,11 @@
 
             .page-header {
                 padding: 3rem 1.5rem;
+                margin-top: -2.5rem;
             }
 
             .page-header h1 {
                 font-size: 2rem;
-            }
-
-            .print-section {
-                margin-bottom: 3rem;
             }
 
             .size-grid {
@@ -1005,10 +709,6 @@
             }
 
             .packages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1023,7 +723,6 @@
         /* Print Styles */
         @media print {
             .header,
-            .print-section,
             .nav-menu,
             .mobile-menu-toggle {
                 display: none;
@@ -1034,19 +733,18 @@
                 line-height: 1.4;
             }
 
-            .package {
+            .package-card {
                 page-break-inside: avoid;
                 margin-bottom: 1rem;
                 border: 1px solid #333;
             }
 
-            .package-title {
+            .package-card-title {
                 color: #000;
             }
 
             .size-definitions h2,
             .packages-section h2,
-            .addons-section h2,
             .footer-section h2 {
                 color: #000;
             }
@@ -1060,6 +758,9 @@
 </head>
 
 <body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <!-- Header -->
     <header class="header" role="banner">
         <div class="nav-container">
@@ -1079,7 +780,7 @@
                 </ul>
                 
                 <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">
                     ☰
                 </button>
                 
@@ -1098,16 +799,13 @@
         </div>
     </header>
 
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
-
-    <!-- Page Header with Gradient -->
-    <section class="page-header">
-        <h1>Pricing</h1>
-    </section>
-
     <!-- Main content -->
     <main id="main-content" class="main-content">
+        <!-- Page Header with Gradient -->
+        <section class="page-header">
+            <h1>Pricing</h1>
+        </section>
+
         <p class="intro-text">Most communities come to me with a number in mind. That's a good place to start. Tell me what you're working with, and I'll tell you honestly what's possible and what's worth doing first.</p>
 
         <!-- How pricing works -->
@@ -1240,16 +938,19 @@
     <script>
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('active');
+            const toggleButton = document.querySelector('.mobile-menu-toggle');
+            const isOpen = mobileNav.classList.toggle('active');
+            toggleButton.setAttribute('aria-expanded', isOpen);
         }
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             const mobileNav = document.getElementById('mobileNav');
             const toggleButton = document.querySelector('.mobile-menu-toggle');
-            
+
             if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
                 mobileNav.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -1257,6 +958,7 @@
         document.querySelectorAll('.mobile-nav a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('mobileNav').classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').setAttribute('aria-expanded', 'false');
             });
         });
     </script>
