@@ -14,9 +14,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packages & Pricing - Common Threads</title>
+    <title>Pricing - Common Threads</title>
     <meta name="description"
-        content="Independent accessibility guidance and verification for government agencies. From vendor oversight to comprehensive compliance programs - expert support tailored to your needs and budget.">
+        content="How pricing works: it depends on how much there is to look at and how much of the work you want done with you. Projects start around $2,000. Tell me your budget and I'll be straight with you.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,7 +205,7 @@
         }
 
         .mobile-nav li {
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #2c5aa0;
         }
 
         .mobile-nav a {
@@ -234,7 +234,7 @@
         .main-content {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 2rem 3rem;
+            padding: 3rem 2rem 0;
         }
 
         /* Page Header */
@@ -246,7 +246,7 @@
         }
 
         .page-header h1 {
-            color: #0f2a52;
+            color: #1e4080;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
@@ -319,14 +319,23 @@
         /* Package Size Definitions */
         .size-definitions {
             background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .size-definitions > * {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .size-definitions h2 {
             color: #2c5aa0;
             text-align: center;
+            font-size: 2rem;
             margin-bottom: 2rem;
         }
 
@@ -342,6 +351,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .size-card:hover {
@@ -351,7 +362,15 @@
 
         .size-card h3 {
             color: #2c5aa0;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .size-grid .size-card h3 {
+            min-height: 3.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .size-card .pages {
@@ -379,7 +398,7 @@
 
         .package {
             background: white;
-            border: 2px solid #e9ecef;
+            border: 1px solid #2c5aa0;
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 2rem;
@@ -393,7 +412,7 @@
         }
 
         .package-header {
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid #2c5aa0;
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
         }
@@ -446,7 +465,7 @@
             grid-template-columns: 1fr 150px 1fr;
             align-items: center;
             padding: 0.5rem 0;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid #2c5aa0;
         }
 
         .pricing-item:last-child {
@@ -493,7 +512,7 @@
 
         .addon-card {
             background: white;
-            border: 1px solid #e9ecef;
+            border: 1px solid #2c5aa0;
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.3s ease;
@@ -529,33 +548,60 @@
         /* Footer sections */
         .footer-section {
             background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
+            padding: 3rem 2rem 4rem;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-top: 3rem;
+            margin-bottom: 0;
+        }
+
+        .footer-section > * {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section--plain {
+            background: transparent;
+            padding: 3rem 0 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .payment-terms {
+            margin-top: 4rem;
+        }
+
+        .payment-terms h3 {
+            color: #2c5aa0;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-terms p {
+            color: #333;
+            margin: 0;
         }
 
         .footer-section h2 {
             color: #2c5aa0;
-            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .always-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
         }
 
         .footer-section ul {
-            list-style: none;
-            padding: 0;
+            padding-left: 1.5rem;
         }
 
         .footer-section li {
             padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .footer-section li:before {
-            content: "•";
-            color: #2c5aa0;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
         }
 
         /* Footer */
@@ -563,7 +609,7 @@
             background: #2c5aa0;
             color: white;
             padding: 3rem 0 1rem 0;
-            margin-top: 3rem;
+            margin-top: 0;
         }
 
         .footer-container {
@@ -629,14 +675,14 @@
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
         .package-card {
             background: white;
-            border: 2px solid #e9ecef;
+            border: 1px solid #2c5aa0;
             border-radius: 8px;
             padding: 2rem 1.5rem;
             transition: all 0.3s ease;
@@ -652,9 +698,13 @@
 
         .package-card-header {
             text-align: center;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 1px solid #2c5aa0;
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
+            min-height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .package-card-title {
@@ -709,7 +759,7 @@
         .package-card-pricing {
             margin-top: auto;
             padding-top: 1.5rem;
-            border-top: 2px solid #f0f0f0;
+            border-top: 1px solid #2c5aa0;
         }
 
         .package-card-pricing h4 {
@@ -721,10 +771,11 @@
 
         .price-row {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
             padding: 0.5rem 0;
             font-size: 0.9rem;
-            border-bottom: 1px solid #f0f0f0;
         }
 
         .price-row:last-child {
@@ -733,11 +784,16 @@
 
         .price-label {
             color: #666;
+            text-align: center;
         }
 
         .price-value {
+            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
             font-weight: 700;
-            color: #333;
+            color: #1e4080;
+            font-size: 1.15rem;
+            text-align: center;
+            white-space: nowrap;
         }
 
         /* Callout Box Styles */
@@ -902,6 +958,20 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .size-grid,
+            .always-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .size-card h3,
+            .package-card-header {
+                min-height: 0;
+            }
+
             .nav-container {
                 padding: 0 1rem;
             }
@@ -1033,317 +1103,114 @@
 
     <!-- Page Header with Gradient -->
     <section class="page-header">
-        <h1>Packages & Pricing</h1>
+        <h1>Pricing</h1>
     </section>
 
     <!-- Main content -->
     <main id="main-content" class="main-content">
-        <p class="intro-text">Whether you're already working with a vendor or starting from scratch, our services provide the independent verification and expert guidance you need. From vendor oversight to comprehensive accessibility programs, we help you make confident decisions backed by clear documentation.</p>
+        <p class="intro-text">Most communities come to me with a number in mind. That's a good place to start. Tell me what you're working with, and I'll tell you honestly what's possible and what's worth doing first.</p>
 
-        <div class="deadline-notice">
-            <strong>Compliance Deadlines:</strong> Agencies serving 50,000+ residents must comply by April 2026, while smaller entities have until April 2027.
-        </div>
-
-        <!-- Print Button -->
-        <section class="print-section">
-            <button onclick="window.print()" class="btn-print">
-                <span>📄</span>
-                Download/Print Pricing Guide
-            </button>
-        </section>
-
-        <!-- Package Size Definitions -->
+        <!-- How pricing works -->
         <section class="size-definitions">
-            <h2>Package Size Definitions</h2>
-            <p>We structure our services based on the size and complexity of our municipality's needs. Most factors that affect scope (website complexity, document volume, third-party tools, and organizational capacity) tend to correlate with population size.</p>
+            <h2>How pricing works</h2>
+            <p style="max-width: 700px; margin: 0 0 2.5rem;">There's no menu here, because the work isn't the same for any two communities. What it costs comes down to two things:</p>
             <div class="size-grid">
                 <div class="size-card">
-                    <h3>Small Scope</h3>
-                    <div class="pages">Municipalities under 20,000 population</div>
-                    <div class="description">Single municipal website with limited third-party integrations, moderate document library, and basic social media presence</div>
+                    <h3>How much there is to look at</h3>
+                    <div class="description">A village with a handful of pages is a very different project than a city with subsites, an app, and a document library. Scope drives cost more than anything else.</div>
                 </div>
                 <div class="size-card">
-                    <h3>Medium Scope</h3>
-                    <div class="pages">Municipalities 20,000-75,000 population</div>
-                    <div class="description">Multi-department sites with various services, portals, and moderate complexity</div>
-                </div>
-                <div class="size-card">
-                    <h3>Large Scope</h3>
-                    <div class="pages">Municipalities over 75,000 population</div>
-                    <div class="description">Extensive digital footprint including multiple websites or portals, numerous third-party tools, large document repositories, and dedicated IT/communications teams</div>
+                    <h3>How much of the work you want me to do with you</h3>
+                    <div class="description">Some communities want to know where they stand and take it from there. Others want a roadmap, training, and someone alongside them while the work gets done.</div>
                 </div>
             </div>
         </section>
-        <!-- Core Packages Section -->
+
+        <!-- Example shapes -->
         <section class="packages-section">
-            <h2>Core Packages</h2>
-            <p style="color: #333; margin-bottom: 3rem; text-align: center;">Choose the package that matches your needs - from one-time assessment to ongoing partnership.</p>
-            
+            <h2>What this tends to look like</h2>
+            <p style="color: #333; margin: 0 0 4rem; max-width: 800px;">A few examples to help you find yourself on the map. These aren't quotes, just honest shapes of what these projects usually involve.</p>
+
             <div class="packages-grid">
-                <!-- Package 1: Risk Assessment -->
                 <article class="package-card">
                     <div class="package-card-header">
-                        <h3 class="package-card-title">Risk Assessment</h3>
-                        <p class="package-card-tagline">"Know Where You Stand"</p>
+                        <h3 class="package-card-title">Small village</h3>
                     </div>
-                    
                     <div class="package-card-description">
-                        Get a comprehensive picture of your site's accessibility status with automated and manual testing. You'll receive a clear roadmap and executive summary - everything you need to understand what to fix and where to start.
+                        A handful of pages and a tight budget. A focused audit of your key pages, with a clear report and a prioritized list of what to fix first.
                     </div>
-                    
-                    <div class="package-card-features">
-                        <h4>What's Included:</h4>
-                        <ul>
-                            <li>WCAG 2.1 AA audit (automated + manual testing)</li>
-                            <li>Plain-language findings report for leadership</li>
-                            <li>Prioritized roadmap with realistic timelines</li>
-                            <li>60-minute findings presentation for stakeholders</li>
-                            <li>Defensible compliance documentation</li>
-                        </ul>
-                    </div>
-                    
                     <div class="package-card-pricing">
-                        <h4>Approximate Pricing by Size:</h4>
                         <div class="price-row">
-                            <span class="price-label">Small</span>
-                            <span class="price-value">$6,500</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Medium</span>
-                            <span class="price-value">$12,000</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Large</span>
-                            <span class="price-value">Starting at $20,000</span>
+                            <span class="price-label">Starting around</span>
+                            <span class="price-value">$2,000</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Package 2: Remediation Guidance -->
                 <article class="package-card">
                     <div class="package-card-header">
-                        <h3 class="package-card-title">Remediation Guidance</h3>
-                        <p class="package-card-tagline">"Get It Fixed"</p>
+                        <h3 class="package-card-title">Mid-size city</h3>
                     </div>
-                    
                     <div class="package-card-description">
-                        Everything in Risk Assessment, plus hands-on weekly support to guide your team or vendors through fixes. We'll answer questions, review progress, and verify changes to ensure you achieve genuine compliance.
+                        A main site, a few subsites, and a pile of documents. Usually an audit plus a roadmap that sequences the work across a budget cycle.
                     </div>
-                    
-                    <div class="package-card-features">
-                        <h4>Everything in Risk Assessment, plus:</h4>
-                        <ul>
-                            <li>Weekly office hours/support sessions (6-16 weeks depending on site complexity)</li>
-                            <li>Review vendor or staff progress and answer questions</li>
-                            <li>Troubleshoot issues and clarify WCAG requirements</li>
-                            <li>90-minute staff accessibility awareness session</li>
-                            <li>Follow-up verification testing to confirm fixes</li>
-                            <li>Training materials and recorded sessions for reuse</li>
-                        </ul>
-                    </div>
-                    
                     <div class="package-card-pricing">
-                        <h4>Approximate Pricing by Size:</h4>
                         <div class="price-row">
-                            <span class="price-label">Small</span>
-                            <span class="price-value">$9,000</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Medium</span>
-                            <span class="price-value">$15,500</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Large</span>
-                            <span class="price-value">Starting at $25,000</span>
+                            <span class="price-label">Depends on scope</span>
+                            <span class="price-value">Let's talk</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Package 3: Complete Compliance -->
                 <article class="package-card">
                     <div class="package-card-header">
-                        <h3 class="package-card-title">Complete Compliance</h3>
-                        <p class="package-card-tagline">"Build It Right"</p>
+                        <h3 class="package-card-title">City of 80,000+</h3>
                     </div>
-                    
                     <div class="package-card-description">
-                        Our most comprehensive package includes everything in Remediation Guidance plus the systems, policies, and training to maintain accessibility long-term. You'll leave with a complete accessibility program and the capability to stay compliant.
+                        Subsites, an app, a large document library, and staff across departments. Often an audit, a roadmap, and training together.
                     </div>
-                    
-                    <div class="package-card-features">
-                        <h4>Everything in Remediation Guidance, plus:</h4>
-                        <ul>
-                            <li>Department-specific process documentation (IT/web, communications, procurement)</li>
-                            <li>Accessibility policy development for your organization</li>
-                            <li>Custom training for different roles and responsibilities</li>
-                            <li>Procurement accessibility requirements and VPAT review guidance</li>
-                            <li>Long-term capability building plan</li>
-                            <li>Final compliance sign-off documentation</li>
-                        </ul>
-                    </div>
-                    
                     <div class="package-card-pricing">
-                        <h4>Approximate Pricing by Size:</h4>
                         <div class="price-row">
-                            <span class="price-label">Small</span>
-                            <span class="price-value">$12,000</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Medium</span>
-                            <span class="price-value">$20,000</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Large</span>
-                            <span class="price-value">Starting at $32,000</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Package 4: Ongoing Partnership -->
-                <article class="package-card">
-                    <div class="package-card-header">
-                        <h3 class="package-card-title">Ongoing Partnership</h3>
-                        <p class="package-card-tagline">"Stay Compliant"</p>
-                    </div>
-                    
-                    <div class="package-card-description">
-                        Maintain accessibility with ongoing quarterly support. This partnership keeps you compliant year after year as new content, features, and vendors are added to your digital properties.
-                    </div>
-                    
-                    <div class="package-card-features">
-                        <h4>What's Included:</h4>
-                        <ul>
-                            <li>Quarterly accessibility scans and reports</li>
-                            <li>New content and vendor reviews</li>
-                            <li>On-call consulting for accessibility questions</li>
-                            <li>Annual training refresh for staff</li>
-                            <li>Updated compliance documentation</li>
-                            <li>Ongoing verification and guidance</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="package-card-pricing">
-                        <h4>Quarterly Pricing:</h4>
-                        <div class="price-row">
-                            <span class="price-label">Small (up to 30 hrs)</span>
-                            <span class="price-value">$7,500/quarter</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Medium (up to 45 hrs)</span>
-                            <span class="price-value">$12,000/quarter</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">Large (custom hrs)</span>
-                            <span class="price-value">$250/hour</span>
+                            <span class="price-label">Projects at this scale</span>
+                            <span class="price-value">Tens of thousands</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Inclusive Design Callout -->
-        <section class="packages-section">
-            <div class="callout-box">
-                <h3>Building Something New?</h3>
-                <p>If you're launching a new website, redesigning, or building new digital services, our <strong>Inclusive Design Partnership</strong> ensures accessibility is embedded throughout your project - not bolted on after launch.</p>
-                
-                <h4>What's Included:</h4>
-                <ul>
-                    <li>Inclusive design workshops for your team and stakeholders</li>
-                    <li>Review wireframes, mockups, and prototypes to catch barriers early</li>
-                    <li>Ongoing accessibility consultations throughout the project</li>
-                    <li>Project-specific guidance from concept to launch</li>
-                    <li>Launch with confidence knowing you're compliant from day one</li>
-                </ul>
-                
-                <div class="project-pricing">
-                    <div class="price-row">
-                        <span class="price-label">Small projects (up to 6 months)</span>
-                        <span class="price-value">$8,000</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-label">Medium projects (6-24 months)</span>
-                        <span class="price-value">$14,000</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-label">Large projects (24+ months)</span>
-                        <span class="price-value">Custom pricing</span>
-                    </div>
-                </div>
-                
-                <p class="emphasized-note">This service replaces the need for remediation - build it right instead of fixing it later.</p>
-            </div>
-        </section>
-
-        <!-- Optional Add-Ons -->
-        <section class="addons-section" id="optional-add-ons">
-            <h2>Specialized Add-On Services</h2>
-            
-            <div class="addon-category">
-                <h3>Before You Start</h3>
-                
-                <div class="addon-item">
-                    <h4>Vendor Evaluation & Contract Support</h4>
-                    <p>Evaluating vendor proposals before you sign? We translate accessibility claims into plain language, compare competing proposals objectively, and help you write enforceable contract requirements.</p>
-                    <p class="addon-pricing">Single Vendor Review: $1,500-$2,500 | Multi-Vendor Comparison: $2,500-$4,000</p>
-                </div>
-            </div>
-            
-            <div class="addon-category">
-                <h3>During Your Project</h3>
-                
-                <div class="addon-item">
-                    <h4>PDF & Document Accessibility Strategy</h4>
-                    <p>Hundreds or thousands of PDFs? We help you triage, prioritize, and create a sustainable remediation plan without breaking the budget. Includes risk assessment, staff workflows, and optional QA oversight.</p>
-                    <p class="addon-pricing">Strategy Development: $3,000-$5,000 | QA Oversight: $1,500-$2,500 | Staff Training: $1,000-$1,500</p>
-                </div>
-                
-                <div class="addon-item">
-                    <h4>Custom Training Modules</h4>
-                    <p>Workshops, recorded sessions, or department-specific modules tailored to your team's needs and responsibilities.</p>
-                    <p class="addon-pricing">1-Hour Session: $400 | 2-Hour Workshop: $900 | Half-Day Workshop (3-4 hours): $2,000</p>
-                </div>
-            </div>
-            
-            <div class="addon-category">
-                <h3>For Procurement & Funding</h3>
-                
-                <div class="addon-item">
-                    <h4>Grant Application Support</h4>
-                    <p>We'll work with your grant writer to identify funding opportunities and strengthen accessibility sections in your applications.</p>
-                    <p class="addon-pricing">$1,500-$3,000 per grant application (depending on complexity)</p>
-                </div>
-                
-                <div class="addon-item">
-                    <h4>Procurement Accessibility Requirements</h4>
-                    <p>Draft accessibility language for RFPs and vendor contracts, or review VPATs to verify vendor compliance claims.</p>
-                    <p class="addon-pricing">Small Procurements: $1,500 | Large Multi-Vendor RFPs: $3,000+</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Custom Programs -->
+        <!-- Working within a budget -->
         <section class="custom-programs">
-            <h2>Need Something Different?</h2>
-            <p>We build custom programs combining any of our services to match your specific situation and budget. Every organization's accessibility journey is unique, and we're here to meet you where you are.</p>
-            
-            <a href="contact.html" class="cta-button">Contact Us to Discuss Your Needs</a>
-        </section>
-        <!-- What's Included -->
-        <section class="footer-section">
-            <h2>What's Included in Every Package</h2>
-            <ul>
-                <li><strong>Independent Oversight</strong> - We guide and verify while your team or vendors do the implementation work. This independence creates a defensible audit trail and protects you from vendor overselling or underdelivering.</li>
-                <li><strong>Clear, Defensible Documentation</strong> - Plain-language reports and compliance records ready for leadership review or DOJ audits, demonstrating your good-faith compliance efforts.</li>
-                <li><strong>Practical Guidance</strong> - We translate complex WCAG requirements into actionable steps that make sense for your team and your budget, even for non-technical staff.</li>
-                <li><strong>Accessible Deliverables</strong> - All reports and documents provided in accessible PDF format—because we hold ourselves to the same standards we advocate for.</li>
-            </ul>
+            <h2>Working within what you have</h2>
+            <p style="text-align: left;">Municipal budgets are real, and I know they take work to put together. If you have a number, tell me. I'd rather build something genuinely useful within your budget than talk you into something you can't afford. Sometimes that means starting with the highest-risk pieces and coming back to the rest next cycle. That's a legitimate plan, not a compromise.</p>
         </section>
 
-        <!-- Payment Terms -->
+        <!-- What you always get -->
         <section class="footer-section">
-            <h2>Payment Terms</h2>
-            <p>For one-time packages, 50% is due at project start and 50% upon delivery. For ongoing retainers, invoices are issued monthly or quarterly (depending on package) and payable net 30.</p>
+            <h2>What you always get</h2>
+            <div class="always-grid">
+                <div class="size-card">
+                    <h3>An honest assessment</h3>
+                    <div class="description">A clear picture of where you stand, in plain language, without sugarcoating or scare tactics.</div>
+                </div>
+                <div class="size-card">
+                    <h3>Practical guidance</h3>
+                    <div class="description">Accessibility requirements translated into steps that make sense for your team, your tools, and your budget.</div>
+                </div>
+                <div class="size-card">
+                    <h3>Independence</h3>
+                    <div class="description">I don't do the code fixes, your staff or vendor does. Because I don't make money from how many issues I find, I have no reason to make the list longer than it needs to be.</div>
+                </div>
+                <div class="size-card">
+                    <h3>Accessible deliverables</h3>
+                    <div class="description">Every report and document I hand you is itself accessible, because I hold myself to the same standard I'm asking of you.</div>
+                </div>
+            </div>
+
+            <div class="payment-terms">
+                <h3>Payment terms</h3>
+                <p>For project work, half is due at the start and half on delivery. For retainers, invoices go out monthly or quarterly and are payable net 30.</p>
+            </div>
         </section>
     </main>
 
