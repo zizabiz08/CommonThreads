@@ -256,7 +256,7 @@
         /* Resources Grid */
         .resources {
             padding: 4rem 0;
-            background: white;
+            background: #f8f9fa;
         }
 
         .resources-container {
@@ -286,6 +286,8 @@
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
         }
 
         .resource-card:hover {
@@ -294,9 +296,8 @@
         }
 
         .resource-header {
-            background: #f8f9fa;
             padding: 1.5rem;
-            border-bottom: 1px solid #eee;
+            min-height: 225px;
         }
 
         .resource-type {
@@ -306,6 +307,7 @@
             font-weight: 600;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
+            border: 1px solid #2c5aa0;
             display: inline-block;
             margin-bottom: 0.8rem;
             text-transform: uppercase;
@@ -327,33 +329,10 @@
 
         .resource-content {
             padding: 1.5rem;
-        }
-
-        .resource-details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .resource-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .resource-detail .icon {
-            width: 16px;
-            height: 16px;
-            background: #e8f4f8;
-            border-radius: 50%;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
-            color: #2c5aa0;
         }
 
         .resource-actions {
@@ -404,7 +383,7 @@
 
         /* Coming Soon Section */
         .coming-soon {
-            background: #f8f9fa;
+            background: white;
             padding: 3rem 0;
         }
 
@@ -603,11 +582,6 @@
             .resource-content {
                 padding: 1rem;
             }
-
-            .resource-details {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
         }
     </style>
 </head>
@@ -677,16 +651,6 @@
                             <p>An overview of my experience, certifications, and approach to digital accessibility for local government.</p>
                         </div>
                         <div class="resource-content">
-                            <div class="resource-details">
-                                <div class="resource-detail">
-                                    <span class="icon" aria-hidden="true">📄</span>
-                                    <span>PDF Format</span>
-                                </div>
-                                <div class="resource-detail">
-                                    <span class="icon" aria-hidden="true">🏛️</span>
-                                    <span>Local government</span>
-                                </div>
-                            </div>
                             <div class="resource-actions">
                                 <a href="Common_Threads_Capability_Statement.pdf" class="btn-primary" target="_blank">Download PDF</a>
                             </div>
@@ -701,16 +665,6 @@
                             <p>A plain-language guide to accessibility overlay tools: what they are, what they can and can't do, and what to understand before relying on one. No jargon, no scare tactics, just the facts.</p>
                         </div>
                         <div class="resource-content">
-                            <div class="resource-details">
-                                <div class="resource-detail">
-                                    <span class="icon" aria-hidden="true">📄</span>
-                                    <span>PDF Format</span>
-                                </div>
-                                <div class="resource-detail">
-                                    <span class="icon" aria-hidden="true">💡</span>
-                                    <span>Plain language</span>
-                                </div>
-                            </div>
                             <div class="resource-actions">
                                 <a href="Accessibility_Overlays_Guide.pdf" class="btn-primary" target="_blank">Download PDF</a>
                             </div>
@@ -726,7 +680,7 @@
                 <h2 id="coming-soon-heading">More coming soon</h2>
                 <p>More resources are on the way, including a plain-language look at manual versus automated testing, and why a targeted audit often serves a community better than an exhaustive one.</p>
                 
-                <p style="margin-top: 1.5rem;">Want to be notified when new resources are available? <a href="mailto:hannah@commonthreadsdigital.com?subject=Resource%20Updates" style="color: #2c5aa0; font-weight: 500;">Sign up for updates</a></p>
+                <p style="margin-top: 1.5rem; text-align: center;">Want to be notified when new resources are available? <a href="mailto:hannah@commonthreadsdigital.com?subject=Resource%20Updates" style="color: #2c5aa0; font-weight: 500;">Sign up for updates</a></p>
             </div>
         </section>
     </main>
