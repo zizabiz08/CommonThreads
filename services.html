@@ -375,15 +375,18 @@
             text-align: left;
             padding: 2rem 1rem;
             border-radius: 8px;
+        }
+
+        .principle-header {
             display: flex;
+            align-items: center;
             gap: 1.25rem;
-            align-items: flex-start;
+            margin-bottom: 1rem;
         }
 
         .principle-icon {
-            flex: 0 0 40px;
-            height: 40px;
-            margin-top: 0.25rem;
+            flex: 0 0 64px;
+            height: 64px;
         }
 
         .principle-icon img {
@@ -393,20 +396,15 @@
             display: block;
         }
 
-        .principle-text {
-            flex: 1;
-        }
-
         .principle h3 {
             color: #2c5aa0;
             font-size: 1.4rem;
-            margin-bottom: 1rem;
         }
 
         .principle p {
             color: #333;
             line-height: 1.6;
-            max-width: 280px;
+            margin-left: calc(64px + 1.25rem);
         }
 
         /* Testimonial Section */
@@ -774,40 +772,40 @@
                 <p class="intro">A few principles shape everything I do:</p>
                 <div class="principles-grid">
                     <div class="principle">
-                        <div class="principle-icon" aria-hidden="true">
-                            <img src="images/targeted.png" alt="">
-                        </div>
-                        <div class="principle-text">
+                        <div class="principle-header">
+                            <div class="principle-icon" aria-hidden="true">
+                                <img src="images/targeted.png" alt="">
+                            </div>
                             <h3>Targeted</h3>
+                        </div>
                         <p>Auditing every page sounds thorough, but it usually isn't the best use of your money. I focus the work where the risk is, so your budget goes toward what actually needs attention rather than a report nobody finishes reading.</p>
-                        </div>
                     </div>
                     <div class="principle">
-                        <div class="principle-icon" aria-hidden="true">
-                            <img src="images/humans.png" alt="">
-                        </div>
-                        <div class="principle-text">
+                        <div class="principle-header">
+                            <div class="principle-icon" aria-hidden="true">
+                                <img src="images/humans.png" alt="">
+                            </div>
                             <h3>Tested by real humans</h3>
+                        </div>
                         <p>I use automated tools and manual testing together, because they catch different things. Scanners are fast and cover a lot of ground. But most accessibility barriers only turn up when a person actually tries to use your site the way a resident with a disability would.</p>
-                        </div>
                     </div>
                     <div class="principle">
-                        <div class="principle-icon" aria-hidden="true">
-                            <img src="images/independent.png" alt="">
-                        </div>
-                        <div class="principle-text">
+                        <div class="principle-header">
+                            <div class="principle-icon" aria-hidden="true">
+                                <img src="images/independent.png" alt="">
+                            </div>
                             <h3>Independent</h3>
-                        <p>Your staff or your vendor does the code fixes, not me. That keeps my assessment independent, and it means your team builds skills that stick.</p>
                         </div>
+                        <p>Your staff or your vendor does the code fixes, not me. That keeps my assessment independent, and it means your team builds skills that stick.</p>
                     </div>
                     <div class="principle">
-                        <div class="principle-icon" aria-hidden="true">
-                            <img src="images/builttolast.png" alt="">
-                        </div>
-                        <div class="principle-text">
+                        <div class="principle-header">
+                            <div class="principle-icon" aria-hidden="true">
+                                <img src="images/builttolast.png" alt="">
+                            </div>
                             <h3>Built to last</h3>
-                        <p>My goal isn't to make you dependent on me. It's to leave your team with the knowledge, the plan, and the documentation to keep this going on their own.</p>
                         </div>
+                        <p>My goal isn't to make you dependent on me. It's to leave your team with the knowledge, the plan, and the documentation to keep this going on their own.</p>
                     </div>
                 </div>
             </div>
