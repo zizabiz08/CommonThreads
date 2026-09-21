@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EHM7274WW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EHM7274WW');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Michigan 350 - Common Threads</title>
+    <meta name="description" content="The Michigan 350: original research on digital accessibility across Michigan's cities, villages, and counties.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* MADE Tommy Soft font from Creative Market */
+        @font-face {
+            font-family: 'MADE Tommy Soft';
+            src: url('fonts/made_tommy_soft_regular-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_regular-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MADE Tommy Soft';
+            src: url('fonts/made_tommy_soft_medium-webfont.woff2') format('woff2'),
+                 url('fonts/made_tommy_soft_medium-webfont.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Use MADE Tommy Soft for headings with Quicksand fallback */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'MADE Tommy Soft', 'Quicksand', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        a.sr-only:focus {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            width: auto;
+            height: auto;
+            padding: 0.75rem 1.5rem;
+            margin: 0;
+            background: #2c5aa0;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            clip: auto;
+            overflow: visible;
+            white-space: normal;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
+
+        /* Focus styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid #0f2a52;
+            outline-offset: 2px;
+        }
+
+        .btn-primary:focus,
+        .btn-secondary:focus {
+            outline: 3px solid #0f2a52;
+            outline-offset: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #2c5aa0;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        .logo a:focus {
+            outline: 3px solid #0f2a52;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-logo img {
+            height: 100px !important;
+            width: auto !important;
+            object-fit: contain;
+            display: block;
+            max-width: 200px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            color: #2c5aa0;
+        }
+
+        .nav-menu a.active {
+            color: #2c5aa0;
+            font-weight: 700;
+            border-bottom: 2px solid #2c5aa0;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #2c5aa0;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: #2c5aa0;
+            background: #f8f9fa;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: white;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: #2c5aa0;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Research findings graphics */
+        .research-graphics {
+            padding: 2rem 2rem 4rem;
+            background: white;
+        }
+
+        .research-graphics-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .research-graphics-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 4rem 0;
+            background: #f0f8ff;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: #1e4080;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        #reportSignupToggle .chevron {
+            display: inline-block;
+            margin-left: 0.4rem;
+            transition: transform 0.2s ease;
+        }
+
+        #reportSignupToggle[aria-expanded="true"] .chevron {
+            transform: rotate(180deg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2c5aa0;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #2c5aa0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #2c5aa0;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.2);
+        }
+
+        .page-header .jump-link {
+            margin-top: 1.5rem;
+        }
+
+        /* Report signup panel, inside the CTA section */
+        .report-signup-panel {
+            text-align: left;
+            max-width: 400px;
+            margin: 2rem auto 0;
+        }
+
+        .form-success-notice {
+            background: #e8f4f8;
+            border: 1px solid #b3d9ed;
+            border-left: 4px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .form-success-notice strong {
+            color: #2c5aa0;
+        }
+
+        .form-error-notice {
+            background: #f8d7da;
+            border: 1px solid #f5c2c7;
+            border-left: 4px solid #842029;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #842029;
+        }
+
+        .form-error-notice a {
+            color: #842029;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #2c5aa0;
+            outline: none;
+        }
+
+        .form-group input.invalid {
+            border-color: #c0392b;
+        }
+
+        .field-error {
+            color: #c0392b;
+            font-size: 0.9rem;
+            margin-top: 0.4rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c5aa0;
+            color: white;
+            padding: 3rem 0 1rem 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            margin-top: -35px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            list-style: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links a:focus {
+            outline: 3px solid white;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-container {
+                padding: 0 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 1rem;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/CTlogo_h.png" alt="Common Threads Logo">
+                </a>
+            </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="michigan350.html" class="active" aria-current="page">The Michigan 350</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+
+                <!-- Mobile navigation -->
+                <div class="mobile-nav" id="mobileNav">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="michigan350.html" class="active" aria-current="page">The Michigan 350</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>The Michigan 350</h1>
+            <p class="subtitle">The Michigan 350 examines how digital accessibility is being implemented across 350 Michigan municipalities, from the barriers found on their websites to the vendors, tools, and practices shaping their approach.</p>
+            <a href="#reportSignupToggle" class="btn-secondary jump-link" id="jumpToSignup">Get the report when it's released</a>
+        </section>
+
+        <!-- Research findings graphics -->
+        <section class="research-graphics">
+            <div class="research-graphics-container">
+                <img src="images/Opener.png" alt="Title card: The Michigan 350, a snapshot of 350 municipalities' digital accessibility. Research by Common Threads.">
+                <img src="images/1%20Barriers.png" alt="Barriers were identified on the homepages of most Michigan municipalities. 86% had at least one serious or critical accessibility issue. 49% had at least one critical accessibility issue. 62% showed more than 5 accessibility issues. These results represent a partial picture; automated testing identifies only a portion of WCAG accessibility barriers.">
+                <img src="images/2%20Categories.png" alt="A few barriers show up again and again, and many require more than simple content updates. 57% had insufficient contrast or relied on color alone to communicate information. 36% had text or controls that may not be clearly identified or understood by assistive technology. 27% had incorrect or invalid ARIA that can interfere with how assistive technology interprets the page. Each category appeared among the three most prevalent automated issue types; percentages are minimum observed prevalence because ties may undercount.">
+                <img src="images/3%20Structure.png" alt="92% of municipalities had barriers related to the underlying structure of their website. Structural barriers go beyond content updates and can involve templates, components, markup, or other aspects of how a website is built.">
+                <img src="images/4%20Size.png" alt="Municipality size doesn't neatly predict accessibility. Average automated issues by population: 5 to 10K, 17 issues. 10 to 30K, 17 issues. 30 to 50K, 22 issues. 50 to 70K, 6 issues. 70K and up, 8 issues. Accessibility patterns did not consistently improve as municipal population increased.">
+                <img src="images/5%20Vendor.png" alt="Accessibility approaches look very different depending on the web vendor. Comparing the two most common vendors: an accessibility statement was present on 3% of sites using Main Vendor 1, versus 93% using Main Vendor 2. An overlay was used on 78% of sites using Main Vendor 1, versus 32% using Main Vendor 2. Neither vendor's approach represents a comprehensive accessibility program.">
+                <img src="images/6%20Overlays.png" alt="Accessibility overlays aren't associated with fewer accessibility issues. Sites with an overlay averaged 12.5 issues found via automated scan, and 69% had more than 5 issues. Sites with no overlay averaged 4 issues, and 56% had more than 5 issues. Accessibility overlays are third-party tools added to websites that claim to improve accessibility, often through a visible toolbar and automated code adjustments.">
+                <img src="images/7%20Programs.png" alt="Public evidence of comprehensive accessibility programs is virtually nonexistent. Across the municipalities studied: 107 accessibility statements found, 99 barrier-reporting mechanisms found, 23 specifically mention WCAG 2.1 AA, 3 ADA coordinators identified, 1 public reference to accessibility training, 0 accessibility plans or roadmaps found, and 0 recent accessibility audits identified. These practices are publicly observable indicators, not an exhaustive definition of a comprehensive accessibility program. Additional practices may exist internally.">
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-container">
+                <h2>Want the full research?</h2>
+                <p>The complete Michigan 350 report will include methodology, deeper analysis, limitations, and additional context behind these findings.</p>
+
+                <button type="button" class="btn-primary" id="reportSignupToggle" aria-expanded="false" aria-controls="reportSignupPanel">
+                    Get the report when it's released
+                    <span class="chevron" aria-hidden="true">&#9662;</span>
+                </button>
+
+                <div id="reportSignupPanel" class="report-signup-panel" hidden>
+                    <div class="form-success-notice" id="signupSuccessNotice" hidden role="status">
+                        <strong>Thanks!</strong> We'll email you when the full report is released.
+                    </div>
+                    <div class="form-error-notice" id="signupErrorNotice" hidden role="alert">
+                        <strong>Something went wrong.</strong> Please try again, or email <a href="mailto:hannah@commonthreadsdigital.com">hannah@commonthreadsdigital.com</a> directly.
+                    </div>
+                    <form action="https://formspree.io/f/xbdvvwod" method="POST" id="reportSignupForm" aria-label="Get notified when the Michigan 350 report is released" novalidate>
+                        <input type="hidden" name="_subject" value="Michigan 350 report signup">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <label for="signupName">Full name *</label>
+                            <input type="text" id="signupName" name="name" required aria-required="true" aria-describedby="signupNameError">
+                            <p class="field-error" id="signupNameError" hidden></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Work email *</label>
+                            <input type="email" id="signupEmail" name="email" required aria-required="true" aria-describedby="signupEmailError" pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}">
+                            <p class="field-error" id="signupEmailError" hidden></p>
+                        </div>
+                        <button type="submit" class="btn-primary">Sign me up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="images/CT_white_simple.png" alt="Common Threads Logo">
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="michigan350.html">The Michigan 350</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const isOpen = mobileNav.classList.toggle('active');
+        toggleButton.setAttribute('aria-expanded', isOpen);
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+
+        if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
+            mobileNav.classList.remove('active');
+            toggleButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.querySelector('.mobile-menu-toggle').setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Reveal the report signup form
+    const reportToggle = document.getElementById('reportSignupToggle');
+    const reportPanel = document.getElementById('reportSignupPanel');
+    if (reportToggle && reportPanel) {
+        reportToggle.addEventListener('click', function() {
+            const isOpen = reportPanel.hidden;
+            reportPanel.hidden = !isOpen;
+            reportToggle.setAttribute('aria-expanded', String(isOpen));
+            if (isOpen) {
+                document.getElementById('signupName').focus();
+            }
+        });
+    }
+
+    // Jump straight to the report signup form, already expanded, from the top of the page
+    const jumpToSignup = document.getElementById('jumpToSignup');
+    if (jumpToSignup && reportToggle && reportPanel) {
+        jumpToSignup.addEventListener('click', function(event) {
+            event.preventDefault();
+            reportPanel.hidden = false;
+            reportToggle.setAttribute('aria-expanded', 'true');
+            document.getElementById('signupName').focus();
+        });
+    }
+
+    // Field-level validation with a persistent, associated error message
+    // (native browser validation bubbles aren't reliably announced by screen readers)
+    function validateField(field, customMessage) {
+        const errorEl = document.getElementById(field.getAttribute('aria-describedby'));
+        if (!field.checkValidity()) {
+            field.classList.add('invalid');
+            field.setAttribute('aria-invalid', 'true');
+            errorEl.textContent = customMessage || field.validationMessage;
+            errorEl.hidden = false;
+            return false;
+        }
+        field.classList.remove('invalid');
+        field.removeAttribute('aria-invalid');
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+        return true;
+    }
+
+    const emailErrorMessage = 'Please enter a valid email address.';
+
+    [
+        { field: document.getElementById('signupName'), message: null },
+        { field: document.getElementById('signupEmail'), message: emailErrorMessage },
+    ].forEach(function(entry) {
+        if (entry.field) {
+            entry.field.addEventListener('input', function() {
+                if (entry.field.classList.contains('invalid')) {
+                    validateField(entry.field, entry.message);
+                }
+            });
+        }
+    });
+
+    // Submit the report signup form in the background so the page never navigates away
+    const reportForm = document.getElementById('reportSignupForm');
+    if (reportForm) {
+        reportForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nameField = document.getElementById('signupName');
+            const emailField = document.getElementById('signupEmail');
+            const nameValid = validateField(nameField);
+            const emailValid = validateField(emailField, emailErrorMessage);
+
+            if (!nameValid || !emailValid) {
+                (nameValid ? emailField : nameField).focus();
+                return;
+            }
+
+            const submitButton = reportForm.querySelector('button[type="submit"]');
+            const successNotice = document.getElementById('signupSuccessNotice');
+            const errorNotice = document.getElementById('signupErrorNotice');
+
+            successNotice.hidden = true;
+            errorNotice.hidden = true;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            fetch(reportForm.action, {
+                method: 'POST',
+                body: new FormData(reportForm),
+                headers: { 'Accept': 'application/json' },
+            })
+                .then(function(response) {
+                    if (response.ok) {
+                        reportForm.reset();
+                        reportForm.hidden = true;
+                        successNotice.hidden = false;
+                        successNotice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        errorNotice.hidden = false;
+                    }
+                })
+                .catch(function() {
+                    errorNotice.hidden = false;
+                })
+                .finally(function() {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Sign me up';
+                });
+        });
+    }
+</script>
+</body>
+</html>
