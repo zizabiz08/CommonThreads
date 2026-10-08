@@ -281,6 +281,13 @@
             height: auto;
         }
 
+        .graphics-updated {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
         /* CTA Section */
         .cta {
             padding: 4rem 0;
@@ -575,7 +582,7 @@
         <section class="page-header">
             <h1>The Michigan 350</h1>
             <p class="subtitle">The Michigan 350 examines how digital accessibility is being implemented across 350 Michigan municipalities, from the barriers found on their websites to the vendors, tools, and practices shaping their approach.</p>
-            <a href="#reportSignupToggle" class="btn-secondary jump-link" id="jumpToSignup">Get the report when it's released</a>
+            <a href="#reportSignupToggle" class="btn-secondary jump-link" id="jumpToSignup">Get the report</a>
         </section>
 
         <!-- Research findings graphics -->
@@ -590,6 +597,7 @@
                 <img src="images/Overlays7.png" alt="Sites with accessibility overlays did not have fewer automated accessibility issues. Sites with overlays had a median of 12.5 automated findings, compared with 7 for sites without overlays. Sixty-nine percent of sites with overlays had more than five automated findings, compared with 56% of sites without overlays.">
                 <img src="images/Programs8.png" alt="Public evidence of comprehensive accessibility programs was virtually nonexistent. Across the sample, 31% had accessibility statements, 28% had barrier-reporting mechanisms, 7% specifically mentioned WCAG 2.1 AA, less than 1% identified ADA coordinators, less than 1% publicly referenced accessibility training, and no accessibility plans, roadmaps, or recent accessibility audit details were found. Additional practices may exist internally.">
             </div>
+            <p class="graphics-updated">Images last updated October 8, 2026.</p>
         </section>
 
         <!-- CTA Section -->
@@ -599,18 +607,18 @@
                 <p>The complete Michigan 350 report will include methodology, deeper analysis, limitations, and additional context behind these findings.</p>
 
                 <button type="button" class="btn-primary" id="reportSignupToggle" aria-expanded="false" aria-controls="reportSignupPanel">
-                    Get the report when it's released
+                    Get the report
                     <span class="chevron" aria-hidden="true">&#9662;</span>
                 </button>
 
                 <div id="reportSignupPanel" class="report-signup-panel" hidden>
                     <div class="form-success-notice" id="signupSuccessNotice" hidden role="status">
-                        <strong>Thanks!</strong> We'll email you when the full report is released.
+                        <strong>Thanks!</strong> We'll email you the full report shortly.
                     </div>
                     <div class="form-error-notice" id="signupErrorNotice" hidden role="alert">
                         <strong>Something went wrong.</strong> Please try again, or email <a href="mailto:hannah@commonthreadsdigital.com">hannah@commonthreadsdigital.com</a> directly.
                     </div>
-                    <form action="https://formspree.io/f/xbdvvwod" method="POST" id="reportSignupForm" aria-label="Get notified when the Michigan 350 report is released" novalidate>
+                    <form action="https://formspree.io/f/xbdvvwod" method="POST" id="reportSignupForm" aria-label="Get the Michigan 350 report" novalidate>
                         <input type="hidden" name="_subject" value="Michigan 350 report signup">
                         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
